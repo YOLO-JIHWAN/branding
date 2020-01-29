@@ -1,8 +1,31 @@
 @import "/resets/normalize.css";
 @import "/resets/custom-reset.css";
 
-/* Typography */
+/*** Typography ***/
 html {font-size:16px}
-body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400; line-height:inherit; color:#222}
+body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400; line-height:inherit; color:#222; background:#fff}
 
-/* Content */
+/*** header ***/
+header .bg-light {background:#eee !important}
+
+/*** Content ***/
+.contents {width:100%; height:100vh}
+
+/* home */
+#home.contents {position:relative; background-image:url("/portfolio/images/bg_home.jpg"); background-repeat:no-repeat; background-size:100%; background-position:center center; background-color:#000; color:#fff}
+#home h2 {padding-top:120px; font-size:3rem}
+#home .scroll {position:absolute; left:50%; bottom:10%; transform:translate(-50%, 0); padding:20px 12px; border:2px solid #fff; border-radius:13px}
+#home .scroller {width:3px; height:6px; background:#fff; transform:translateY(-10px); animation: scrolling 2.5s infinite}
+
+@keyframes scrolling {
+	0% {transform:translateY(-10px); opacity:0}
+	100% {transform:translateY(10px)}
+}
+/* about */
+#about.contents {background:blue}
+
+/* ability */
+#ability.contents {background:gray}
+
+/* work */
+#work.contents {background:yellow}
