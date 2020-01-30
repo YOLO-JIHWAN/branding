@@ -2,30 +2,45 @@
 @import "/resets/custom-reset.css";
 
 /*** Typography ***/
-html {font-size:16px}
-body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400; line-height:inherit; color:#222; background:#fff}
+html {font-size:16px; scroll-behavior:smooth}
+body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400; line-height:inherit; color:#fff; background:#fff}
 
 /*** header ***/
-header .bg-light {background:#eee !important}
+header .bg-dark {background:#222 !important}
+header .navbar-brand img {-webkit-filter:invert(1); filter:invert(1)} /* 로고 색상 변경 */
 
 /*** Content ***/
 .contents {width:100%; height:100vh}
 
 /* home */
-#home.contents {position:relative; background-image:url("/portfolio/images/bg_home.jpg"); background-repeat:no-repeat; background-size:100%; background-position:center center; background-color:#000; color:#fff}
-#home h2 {padding-top:120px; font-size:3rem}
+#home.contents {position:relative; background-image:url("/portfolio/images/bg_home.jpg"); background-repeat:no-repeat; background-size:100%; background-position:center center; background-color:#000}
+#home h2 {padding-top:120px; font-size:3rem; text-transform:uppercase; overflow:hidden; background:linear-gradient(90deg, #000, #fff, #000); background-repeat:no-repeat; background-size:80%; animation:shiningtext 4.5s linear infinite;-webkit-background-clip: text; -webkit-text-fill-color: rgba(255, 255, 255, 0);}
 #home .scroll {position:absolute; left:50%; bottom:10%; transform:translate(-50%, 0); padding:20px 12px; border:2px solid #fff; border-radius:13px}
 #home .scroller {width:3px; height:6px; background:#fff; transform:translateY(-10px); animation: scrolling 2.5s infinite}
+
+@keyframes shiningtext {
+	0% {background-position:-500%}
+	100% {background-position:500%}
+}
 
 @keyframes scrolling {
 	0% {transform:translateY(-10px); opacity:0}
 	100% {transform:translateY(10px)}
 }
 /* about */
-#about.contents {background:blue}
+#about.contents {position:relative; background-image:url("/portfolio/images/bg_about.jpg"); background-repeat:no-repeat; background-size:contain; background-position:left bottom; background-color:#000}
+.about-me {position:absolute; top:50%; right:10%; transform:translateY(-50%); font-size:2rem; animation:downtext 2s}
+.about-me > p:last-child {color:yellow}
+.about-me > p:last-child .btn {vertical-align:top}
+
+@keyframes downtext {
+	0% {opacity:0; transform:translateY(50%)}
+	100% {opacity:1; transform:translateY(-50%)}
+}
 
 /* ability */
-#ability.contents {background:gray}
+#ability.contents {background-image:url("/portfolio/images/bg_ability.jpg"); background-repeat:no-repeat; background-size:contain; background-position:right bottom; background-color:#000}
 
 /* work */
-#work.contents {background:yellow}
+#work.contents {position:relative; background:yellow}
+.bg_work {position:absolute; top:0; left:0; width:100%; height:100%; background-image:url("/portfolio/images/bg_work.jpg"); background-repeat:no-repeat; background-size:cover; background-position:center center}
