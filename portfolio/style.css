@@ -29,13 +29,22 @@ header .navbar-brand img {-webkit-filter:invert(1); filter:invert(1)} /* 로고 
 }
 /* about */
 #about.contents {position:relative; background-image:url("/portfolio/images/bg_about.jpg"); background-repeat:no-repeat; background-size:contain; background-position:left bottom; background-color:#000}
-.about-me {position:absolute; top:50%; right:10%; transform:translateY(-50%); font-size:2rem; animation:downtext 2s}
-.about-me > p:last-child {color:yellow}
+.about-me {display:none; position:absolute; top:50%; right:10%; transform:translateY(-50%); font-size:2rem}
+.about-me.animate {display:block; animation:downtext 2s}
 .about-me > p:last-child .btn {vertical-align:top}
+.about-me > p:last-child .btn.animate {animation-name:horizonmove; animation-duration:2s; animation-delay:3s; animation-iteration-count:4}
 
 @keyframes downtext {
 	0% {opacity:0; transform:translateY(50%)}
 	100% {opacity:1; transform:translateY(-50%)}
+}
+@keyframes horizonmove {
+	16.65% {transform:translateX(8px)}
+	33.3% {transform:translateX(-6px)}
+	49.95% {transform: translateX(4px)}
+	66.6% {transform:translateX(-2px)}
+	83.25% {transform:translateX(1px)}
+	100% {transform:translateX(0)}
 }
 
 /* ability */
