@@ -13,3 +13,19 @@ function autoScroll() {
 	}
 }
 window.addEventListener("scroll", autoScroll);
+
+// //about more information
+const btnMore = document.querySelectorAll('.btn-more');
+const engTable = document.querySelector(".eng > .table");
+const korTable = document.querySelector(".kor > .table");
+
+[].forEach.call(btnMore, function(evt){
+	evt.addEventListener("click", moreInfo, false);
+});
+function moreInfo(e) {
+	if(this.innerHTML == "button") {
+		engTable.classList.toggle("visible");
+	} else {
+		korTable.classList.toggle("visible");
+	}
+}

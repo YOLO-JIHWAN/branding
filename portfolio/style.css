@@ -5,6 +5,9 @@
 html {font-size:16px; scroll-behavior:smooth}
 body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400; line-height:inherit; color:#fff; background:#fff}
 
+/*** color ***/
+/* gold #ffd700 *//* pink #ffc0cb *//* black #222 */
+
 /*** header ***/
 header .bg-dark {background:#222 !important}
 header .navbar-brand img {-webkit-filter:invert(1); filter:invert(1)} /* 로고 색상 변경 */
@@ -14,7 +17,7 @@ header .navbar-brand img {-webkit-filter:invert(1); filter:invert(1)} /* 로고 
 
 /* home */
 #home.contents {position:relative; background-image:url("/portfolio/images/bg_home.jpg"); background-repeat:no-repeat; background-size:100%; background-position:center center; background-color:#000}
-#home h2 {padding-top:120px; font-size:3rem; text-transform:uppercase; overflow:hidden; background:linear-gradient(90deg, #000, #fff, #000); background-repeat:no-repeat; background-size:80%; animation:shiningtext 4.5s linear infinite;-webkit-background-clip: text; -webkit-text-fill-color: rgba(255, 255, 255, 0);}
+#home h2 {padding-top:120px; font-size:3rem; text-transform:uppercase; overflow:hidden; background:linear-gradient(90deg, #000, #fff, #000); background-repeat:no-repeat; background-size:80%; animation:shiningtext 4.5s linear infinite; -webkit-background-clip:text; -webkit-text-fill-color: rgba(255, 255, 255, 0)}
 #home .scroll {position:absolute; left:50%; bottom:10%; transform:translate(-50%, 0); padding:20px 12px; border:2px solid #fff; border-radius:13px}
 #home .scroller {width:3px; height:6px; background:#fff; transform:translateY(-10px); animation: scrolling 2.5s infinite}
 
@@ -29,11 +32,26 @@ header .navbar-brand img {-webkit-filter:invert(1); filter:invert(1)} /* 로고 
 }
 /* about */
 #about.contents {position:relative; background-image:url("/portfolio/images/bg_about.jpg"); background-repeat:no-repeat; background-size:contain; background-position:left bottom; background-color:#000}
-.about-me {display:none; position:absolute; top:50%; right:10%; transform:translateY(-50%); font-size:2rem}
+/* .about-me {position:absolute; top:50%; right:10%; transform:translateY(-50%)} */
+.about-me {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)}
+.about-me .table {color:#fff}
 .about-me.animate {display:block; animation:downtext 2s}
+.about-me .btn-group .btn.active {background:#ffd700; border-color:#ffd700}
+
+/*
 .about-me > p:last-child .btn {vertical-align:top}
 .about-me > p:last-child .btn.animate {animation-name:horizonmove; animation-duration:2s; animation-delay:3s; animation-iteration-count:4}
-
+*/
+.about-me .eng, .about-me .kor {display:none; font-size:1.5rem}
+.about-me .eng.visible, .about-me .kor.visible {display:block}
+.about-me .table {font-size:1rem; font-weight:100}
+.about-me .table th {font-weight:100}
+.about-me .eng > .table,
+.about-me .kor > .table {display:none}
+.about-me .eng > .table.visible,
+.about-me .kor > .table.visible {display:block}
+.about-me .btn-more {text-decoration:underline}
+/* .about-me .dropdown button {color:#fff} */
 @keyframes downtext {
 	0% {opacity:0; transform:translateY(50%)}
 	100% {opacity:1; transform:translateY(-50%)}
