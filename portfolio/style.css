@@ -6,7 +6,8 @@ html {font-size:16px; scroll-behavior:smooth}
 body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400; line-height:inherit; color:#fff; background:#fff}
 
 /*** color ***/
-/* gold #ffd700 *//* pink #ffc0cb *//* black #222 */ /* ivory #ece6cc */ /* green #2ecc71 */ /* navy #v */ /* orange #f08400 */ /* black #121214 */
+/* gold #ffd700 *//* pink #ffc0cb #f5a6bc *//* black #222 #121214 */ /* ivory #ece6cc */ /* green #2ecc71 */ /* navy #12295b */ /* orange #f08400 */ /* red #d40718 */
+
 
 /*** header ***/
 header .bg-dark {background:#222 !important}
@@ -37,12 +38,11 @@ header .navbar-brand img {-webkit-filter:invert(1); filter:invert(1)} /* 로고 
 }
 /* about */
 #about.contents {position:relative; background-image:url("/portfolio/images/bg_about.jpg"); background-repeat:no-repeat; background-size:contain; background-position:left bottom; background-color:#000}
-.about-me .lang-wrap {float:right; padding:30px; padding-right:8%; font-size:1.25rem}
-.about-me .lang-wrap .eng, .about-me .lang-wrap .kor {min-width:400px}
+.about-me .lang-wrap {float:right; padding:30px; padding-right:10%; font-size:1.25rem}
+.about-me .lang-wrap .eng, .about-me .lang-wrap .kor {min-width:410px}
 .about-me .table {color:#fff}
-.about-me.animate {display:block; animation:downtext 2s}
-
 /*
+.about-me.animate {display:block; animation:downtext 2s}
 .about-me > p:last-child .btn {vertical-align:top}
 .about-me > p:last-child .btn.animate {animation-name:horizonmove; animation-duration:2s; animation-delay:3s; animation-iteration-count:4}
 */
@@ -54,7 +54,14 @@ header .navbar-brand img {-webkit-filter:invert(1); filter:invert(1)} /* 로고 
 .about-me .kor > .table {display:none}
 .about-me .eng > .table.visible,
 .about-me .kor > .table.visible {display:block}
-.about-me .btn-more {text-decoration:underline}
+.about-me .btn-more {padding:10px 15px; position:relative}
+.about-me .btn-more::before,
+.about-me .btn-more::after {position:absolute; width:100%; height:50%; left:0}
+.about-me .btn-more::before {top:0; transform:translate3d(0, -50%, 0)}
+.about-me .btn-more::after {bottom:0; transform:translate3d(0, 50%, 0)}
+.about-me .btn-more:hover::before,
+.about-me .btn-more:hover::after {transform:translate3d(0,0,0)}
+.about-me .btn-more:hover {background:#f08400}
 /* .about-me .dropdown button {color:#fff} */
 @keyframes downtext {
 	0% {opacity:0; transform:translateY(50%)}
