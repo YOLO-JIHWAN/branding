@@ -3,88 +3,63 @@
 
 /*** Typography ***/
 html {font-size:16px; scroll-behavior:smooth}
-body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400; line-height:inherit; color:#fff; background:#fff}
+body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400; line-height:inherit; color:#121214; background:#fff}
 
 /*** color ***/
 /* gold #ffd700 *//* pink #ffc0cb #f5a6bc *//* black #222 #121214 */ /* ivory #ece6cc */ /* green #2ecc71 */ /* navy #12295b */ /* orange #f08400 */ /* red #d40718 */
 
+/*** common ***/
 
-/*** header ***/
-header .bg-dark {background:#222 !important}
-header nav {padding-left:50px !important; padding-right:50px !important}
-header .navbar-brand img {-webkit-filter:invert(1); filter:invert(1)} /* 로고 색상 변경 */
+/*** Nav ***/
+#nav {position:fixed; padding:200px 50px; width:260px; height:100vh; background:#eee; text-align:center; z-index:10}
+.logo {width:160px; text-align:center}
+.logo img {width:100%; height:100%}
+.gnb {padding:50px 0; font-size:24px; font-weight:bold}
+.gnb li {padding:5px 0}
+.gnb li:hover a {color:#2ecc71}
+.gnb a {text-decoration:none; transition-duration:.35s}
+.copyright {position:absolute; left:50%; bottom:50px; transform:translateX(-50%); font-size:12px}
 
 /*** Content ***/
-.contents {width:100%; height:100vh; padding:0 50px !important}
+#content {padding-left:260px}
+.container-fluid {padding-left:80px !important; padding-right:80px !important; padding-top:60px}
 
-/* common */
-.lang-btn {padding:100px 0 50px}
-.lang-btn > .btn.active {background-color:#12295b !important; border-color:#12295b !important}
+/* portfolio */
+.filter-lnb {display:inline-flex; position:relative; overflow:hidden; background:#fff; padding:0 20px; border-radius:40px; box-shadow:0 10px 40px rgba(159,162, 177, 0.8);}
+.lnb-item {position:relative; padding:20px; margin:0 6px; font-weight:400; transition:.3s; color:#ccc}
+.lnb-item:not(.active):hover {color:#aaa}
+.lnb-item::before {content:""; position:absolute; bottom:-6px; left:0; width:100%; height:5px; background:#aaa; border-radius:8px 8px 0 0; opacity:0; transition:.3s}
+.lnb-item:not(.active):hover::before {opacity:1; bottom:0}
+.lnb-indicator {position:absolute; left:0; bottom:0; height:5px; transition:.4s; border-radius:8px 8px 0 0; z-index:1}
+.lnb-item:hover {text-decoration:none}
 
-/* home */
-#home.contents {position:relative; background-image:url("/portfolio/images/bg_home.jpg"); background-repeat:no-repeat; background-size:contain; background-position:center center; background-color:#000}
-#home h2 {padding-top:120px; font-size:3rem; text-transform:uppercase; overflow:hidden; background:linear-gradient(90deg, #000, #fff, #000); background-repeat:no-repeat; background-size:80%; animation:shiningtext 4.5s linear infinite; -webkit-background-clip:text; -webkit-text-fill-color: rgba(255, 255, 255, 0)}
-#home .scroll {position:absolute; left:50%; bottom:10%; transform:translate(-50%, 0); padding:20px 12px; border:2px solid #fff; border-radius:13px}
-#home .scroller {width:3px; height:6px; background:#fff; transform:translateY(-10px); animation: scrolling 2.5s infinite}
+.filter-container {margin-bottom:100px}
+.filtr-item {box-sizing:border-box; padding:0}
+/* .filtr-item img {width:100%; height:100%} */
+/* .card {width:300px !important} */
+/*** footer ***/
+#footer {height:200px; background:#2ecc71}
 
-@keyframes shiningtext {
-	0% {background-position:-500%}
-	100% {background-position:500%}
-}
+/*** horizon scroll ***/
+.horizon-scroll {position:fixed; top:0; width:10%; height:4px; background:#2ecc71; border-bottom:0.5px solid #eee}
 
-@keyframes scrolling {
-	0% {transform:translateY(-10px); opacity:0}
-	100% {transform:translateY(10px)}
-}
-/* about */
-#about.contents {position:relative; background-image:url("/portfolio/images/bg_about.jpg"); background-repeat:no-repeat; background-size:contain; background-position:left bottom; background-color:#000}
-.about-me .lang-wrap {float:right; padding:30px; padding-right:10%; font-size:1.25rem}
-.about-me .lang-wrap .eng, .about-me .lang-wrap .kor {min-width:410px}
-.about-me .table {color:#fff}
-/*
-.about-me.animate {display:block; animation:downtext 2s}
-.about-me > p:last-child .btn {vertical-align:top}
-.about-me > p:last-child .btn.animate {animation-name:horizonmove; animation-duration:2s; animation-delay:3s; animation-iteration-count:4}
-*/
-.about-me .eng, .about-me .kor {display:none}
-.about-me .eng.visible, .about-me .kor.visible {display:block}
-.about-me .table {font-size:1rem; font-weight:100}
-.about-me .table th {font-weight:100}
-.about-me .eng > .table,
-.about-me .kor > .table {display:none}
-.about-me .eng > .table.visible,
-.about-me .kor > .table.visible {display:block}
-.about-me .btn-more {padding:10px 15px; position:relative}
-.about-me .btn-more::before,
-.about-me .btn-more::after {position:absolute; width:100%; height:50%; left:0}
-.about-me .btn-more::before {top:0; transform:translate3d(0, -50%, 0)}
-.about-me .btn-more::after {bottom:0; transform:translate3d(0, 50%, 0)}
-.about-me .btn-more:hover::before,
-.about-me .btn-more:hover::after {transform:translate3d(0,0,0)}
-.about-me .btn-more:hover {background:#f08400}
-/* .about-me .dropdown button {color:#fff} */
-@keyframes downtext {
-	0% {opacity:0; transform:translateY(50%)}
-	100% {opacity:1; transform:translateY(-50%)}
-}
-@keyframes horizonmove {
-	16.65% {transform:translateX(8px)}
-	33.3% {transform:translateX(-6px)}
-	49.95% {transform: translateX(4px)}
-	66.6% {transform:translateX(-2px)}
-	83.25% {transform:translateX(1px)}
-	100% {transform:translateX(0)}
-}
-.about-me .lang-wrap .btn.btn-info {background-color:#f08400 !important; border-color:#f08400 !important}
-/* ability */
-#ability.contents {background-image:url("/portfolio/images/bg_ability.jpg"); background-repeat:no-repeat; background-size:contain; background-position:right bottom; background-color:#000}
-#ability .card {max-width:313px}
-#ability .card-header {padding:30px; background:#222; text-align:center}
-#ability .card-header img {width:72px; -webkit-filter:invert(1); filter:invert(1)}
-#ability .card-body {color:#000}
-#ability .card-body .card-title {font-size:1.5rem; font-weight:600}
-#ability .card-body .card-text {font-weight:200}
-#ability .card-footer .card-text {font-weight:100}
-/* work */
-#work.contents {position:relative; background:yellow}
-.bg_work {position:absolute; top:0; left:0; width:100%; height:100%; background-image:url("/portfolio/images/bg_work.jpg"); background-repeat:no-repeat; background-size:cover; background-position:center center}
+/*** footer ***/
+#footer {padding:30px 80px; color:#fff}
+#footer > * {padding:10px 0}
+#footer a {text-decoration:none}
+#footer .sns li {float:left; position:relative; margin-left:5px}
+#footer .sns li:first-child {margin-left:0}
+#footer .sns li::before,
+#footer .quick-contact dd::before {content:""; display:block; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#fff; transition:.5s}
+#footer .sns li:hover::before,
+#footer .quick-contact dd:hover::before {width:100%}
+#footer .sns li:hover a {color:#fff}
+#footer .sns a {text-decoration:none}
+#footer .quick-contact dl {margin:0}
+#footer .quick-contact dt, #footer .quick-contact dd {float:left}
+#footer .quick-contact dt {margin:0 10px 0 20px}
+#footer .quick-contact dt:first-child {margin-left:0}
+#footer .quick-contact dd {position:relative}
+#footer .quick-contact dd:hover a {color:#fff}
+#footer .signature {padding-top:30px}
+.go-top {position:absolute; top:0; left:0}
