@@ -33,9 +33,9 @@ body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400
 #footer {padding:30px 80px 15px; color:#fff; background:#2ecc71}
 #footer > * {padding:10px 0}
 #footer a {text-decoration:none}
-#footer .sns li {float:left; position:relative; margin-left:5px}
-#footer .sns li:first-child {margin-left:0}
-#footer .sns li::before,
+#footer .sns > li {float:left; position:relative; margin-left:7px}
+#footer .sns > li:first-child {margin-left:0}
+#footer .sns > li::before,
 #footer .quick-contact dd::before {content:""; display:block; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#fff; transition:.5s}
 #footer .sns li:hover::before,
 #footer .quick-contact dd:hover::before {width:100%}
