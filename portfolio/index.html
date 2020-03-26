@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="/css/isolde.css">
 	<link rel="stylesheet" href="/portfolio/style.css">
 	<title>Portfolio</title>
 </head>
@@ -32,149 +33,151 @@
 				All RIGHTS RESERVED.
 			</p>
 		</nav>
-		<div id="content">
+		<div id="content" class="sortable">
 			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-12 filters">
-						<nav class="simplefilter filter-lnb">
-							<a href="#" class="lnb-item filtr-controls active" active-color="#2ecc71" data-filter="all">ALL</a>
-							<a href="#" class="lnb-item filtr-controls" active-color="#2ecc71" data-filter="pc">PC</a>
-							<a href="#" class="lnb-item filtr-controls" active-color="#2ecc71" data-filter="mobile">MOBILE</a>
-							<a href="#" class="lnb-item filtr-controls" active-color="#2ecc71" data-filter="rwd">RWD</a>
-							<a href="#" class="lnb-item filtr-controls" active-color="#2ecc71" data-filter="etc">ETC.</a>
-							<span class="lnb-indicator"></span>
+				<div class="wrapper">
+					<div class="clearfix">
+						<nav class="sortable__nav nav">
+							<a href="#" class="nav__link active" active-color="#2ecc71" data-isolde-link="all">ALL</a>
+							<a href="#" class="nav__link" active-color="#2ecc71" data-isolde-link="pc">PC</a>
+							<a href="#" class="nav__link" active-color="#2ecc71" data-isolde-link="mobile">MOBILE</a>
+							<a href="#" class="nav__link" active-color="#2ecc71" data-isolde-link="rwd">RWD</a>
+							<a href="#" class="nav__link" active-color="#2ecc71" data-isolde-link="etc">ETC.</a>
+							<span class="link-indicator"></span>
 						</nav>
-						<!--
-						<ul class="simplefilter filter-lnb">
-							<li class="filtr-controls lnb-item active" data-filter="all" active-color="#2ecc71">All</li>
-							<li class="filtr-controls lnb-item" data-filter="pc" active-color="#2ecc71">PC</li>
-							<li class="filtr-controls lnb-item" data-filter="mobile" active-color="#2ecc71">Mobile</li>
-							<li class="filtr-controls lnb-item" data-filter="rwd" active-color="#2ecc71">RWD</li>
-							<li class="filtr-controls lnb-item" data-filter="etc" active-color="#2ecc71">Etc.</li>
-							<span class="lnb-indicator"></span>
-						</ul>
-						-->
-						<div class="addtional col-lg-12">
-							<input type="text" name="search" placeholder="Search..." class="form-control filtr-controls fltr-search" data-search>
+					</div>
+					<div id="isolde" class="isolde-default">
+						<div data-isolde-el="pc">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Cinderella</h2>
+									<h3 class="item__sort">PC</h3>
+									<p class="item__text">Cinderella wearing European fashion of the mid-1860’s</p>
+								</div>
+							</a>
+						</div>
+						<div data-isolde-el="mobile">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/rapunzel.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Rapunzel</h2>
+									<h3 class="item__sort">Mobile</h3>
+									<p class="item__text">Rapunzel, clothed in 1820’s period fashion</p>
+								</div>
+							</a>
+						</div>
+						<div data-isolde-el="etc">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/belle.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Belle</h2>
+									<h3 class="item__sort"></h3>
+									<p class="item__text">Belle, based on 1770’s French court fashion</p>
+								</div>
+							</a>
+						</div>
+						<div data-isolde-el="pc">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/mulan_2.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Mulan</h2>
+									<h3 class="item__sort"></h3>
+									<p class="item__text">Mulan, based on the Ming Dynasty period</p>
+								</div>
+							</a>
+						</div>
+						<div data-isolde-el="rwd">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sleeping-beauty.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Sleeping Beauty</h2>
+									<h3 class="item__sort"></h3>
+									<p class="item__text">Sleeping Beauty, based on European fashions in 1485</p>
+								</div>
+							</a>
+						</div>
+						<div data-isolde-el="mobile">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/pocahontas_2.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Pocahontas</h2>
+									<h3 class="item__sort"></h3>
+									<p class="item__text">Pocahontas based on 17th century Powhatan costume</p>
+								</div>
+							</a>
+						</div>
+						<div data-isolde-el="rwd">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/snow-white.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Snow White</h2>
+									<h3 class="item__sort"></h3>
+									<p class="item__text">Snow White, based on 16th century German fashion</p>
+								</div>
+							</a>
+						</div>
+						<div data-isolde-el="etc">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ariel.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Ariel</h2>
+									<h3 class="item__sort"></h3>
+									<p class="item__text">Ariel wearing an evening gown of the 1890’s</p>
+								</div>
+							</a>
+						</div>
+						<div data-isolde-el="pc">
+							<a href="#" class="isolde__item">
+								<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/tiana.jpg" alt="" class="item__picture">
+								<div class="item__infos">
+									<h2 class="item__title">Tiana</h2>
+									<h3 class="item__sort"></h3>
+									<p class="item__text">Tiana wearing the <i>robe de style</i> of the 1920’s</p>
+								</div>
+							</a>
 						</div>
 					</div>
 				</div>
-				<div class="filter-container card-columns">
-					<div class="filtr-item card" data-category="pc" data-sort="1" data-author="3">
-						<img src="/portfolio/images/bg_about.jpg" alt="" height="150" class="card-img-top">
-						<div class="card-body">
-							<h5 class="card-title">Title</h5>
-							<p class="card-text">Content</p>
-						</div>
-					</div>
-					<div class="filtr-item card p-3" data-category="mobile">
-						<div class="card-body">
-							<p class="card-text">content1</p>
-						</div>
-					</div>
-					<div class="filtr-item card" data-category="pc, rwd">
-						<a href="">
-							<img src="/portfolio/images/bg_about.jpg" alt="" height="120">
-						</a>
-					</div>
-					<div class="filtr-item card p-3" data-category="pc ,etc">
-						<a href="">
-							<img src="/portfolio/images/bg_about.jpg" alt="" height="120">
-						</a>
-					</div>
-					<div class="filtr-item card" data-category="mobile, etc">
-						<a href="">
-							<img src="/portfolio/images/bg_about.jpg" alt="" height="120">
-						</a>
-					</div>
-					<div class="filtr-item card" data-category="pc, mobile">
-						<a href="">
-							<img src="/portfolio/images/bg_about.jpg" alt="" height="120">
-						</a>
-					</div>
-					<div class="filtr-item card" data-category="mobile, rwd">
-						<a href="">
-							<img src="/portfolio/images/bg_about.jpg" alt="" height="120">
-						</a>
-					</div>
-				</div>
-					<!--
-					<div class="cards d-flex row filter-container">
-						<div class="card col-lg-4 filtr-item" data-category="pc" data-sort="" data-author="">
-							<img src="/portfolio/images/bg_home.jpg" alt="">
-							<div class="filtr-title"></div>
-						</div>
-						<div class="card col-lg-4 filtr-item" data-category="pc, mobile" data-sort="" data-author="">
-							<img src="/portfolio/images/bg_home.jpg" alt="">
-							<div class="filtr-title"></div>
-						</div>
-						<div class="card col-lg-4 filtr-item" data-category="mobile" data-sort="" data-author="">
-							<img src="/portfolio/images/bg_home.jpg" alt="">
-							<div class="filtr-title"></div>
-						</div>
-						<div class="card col-lg-4 filtr-item" data-category="rwd, etc" data-sort="" data-author="">
-							<img src="/portfolio/images/bg_home.jpg" alt="">
-							<div class="filtr-title"></div>
-						</div>
-					</div>
-					-->
-			<div class="horizon-scroll"></div>
-		</div>
-		<footer id="footer">
-			<ul class="sns clearfix font-weight-bold">
-				<li>
-					<a href="">Blog</a>
-				</li>
-				<li>
-					<a href="">Codepen</a>
-				</li>
-				<li>
-					<a href="">Github</a>
-				</li>
-			</ul>
-			<div class="quick-contact">
-				<dl class="clearfix">
-					<dt>Tel</dt>
-					<dd>
-						<a href="tel:+82 10-2546-8095">+82 10 2546 8095</a>
-					</dd>
-					<dt>E</dt>
-					<dd>
-						<a href="mailto:yolo.jihwan@gmail.com">yolo.jihwan@gmail.com</a>
-					</dd>
-				</dl>
 			</div>
-			<p class="signature"><img src="/portfolio/images/footer-logo.png" alt="logo" class="d-inline align-top mr-1" width="20" height="20">YOLO-JIHWAN PORTFOLIO</p>
-		</footer>
-		<button type="button" class="go-top btn">go top</button>
+			<div class="horizon-scroll"></div>
+			<footer id="footer">
+				<ul class="sns clearfix font-weight-bold">
+					<li>
+						<a href="">Blog</a>
+					</li>
+					<li>
+						<a href="">Codepen</a>
+					</li>
+					<li>
+						<a href="">Github</a>
+					</li>
+				</ul>
+				<div class="quick-contact">
+					<dl class="clearfix">
+						<dt>Tel</dt>
+						<dd>
+							<a href="tel:+82 10-2546-8095">+82 10 2546 8095</a>
+						</dd>
+						<dt>E</dt>
+						<dd>
+							<a href="mailto:yolo.jihwan@gmail.com">yolo.jihwan@gmail.com</a>
+						</dd>
+					</dl>
+				</div>
+				<p class="signature"><img src="/portfolio/images/footer-logo.png" alt="logo" class="d-inline align-top mr-1" width="20" height="20">YOLO-JIHWAN PORTFOLIO</p>
+			</footer>
+			<button type="button" class="go-top btn">go top</button>
+		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="/font-awesome/js/all.min.js"></script>
-	<script src="/javascripts/jquery.filterizr.min.js"></script>
 	<script src="/portfolio/js/common.js"></script>
-	<script>
-		//filterizR
-		const filterizr = $(".filter-container").filterizr({
-        controlsSelector: ".filtr-controls",
-		gridItemsSelector: ".filtr-item",
-        spinner: {
-          enabled: true,
-        },
-		});
-		$("#shuffle").click(() => {
-			filterizr.filterizr("shuffle");
-		});
-		const sortFilterizr = (order) => {
-			filterizr.filterizr("sort", $("select :selected").val(), order);
-		}
-		$("#asc-btn").click(() => {
-			sortFilterizr("asc");
-		})
-		$("#des-btn").click(() => {
-			sortFilterizr("des");
-		});
+	<script type="module">
+		import isolde from '/javascripts/isolde.js';
+		const isoldejs = new isolde();
 	</script>
 </body>
 </html>

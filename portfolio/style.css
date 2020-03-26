@@ -24,27 +24,13 @@ body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400
 #content {padding-left:260px}
 .container-fluid {padding-left:80px !important; padding-right:80px !important; padding-top:60px}
 
-/* portfolio */
-.filter-lnb {display:inline-flex; position:relative; overflow:hidden; background:#fff; padding:0 20px; border-radius:40px; box-shadow:0 10px 40px rgba(159,162, 177, 0.8);}
-.lnb-item {position:relative; padding:20px; margin:0 6px; font-weight:400; transition:.3s; color:#ccc}
-.lnb-item:not(.active):hover {color:#aaa}
-.lnb-item::before {content:""; position:absolute; bottom:-6px; left:0; width:100%; height:5px; background:#aaa; border-radius:8px 8px 0 0; opacity:0; transition:.3s}
-.lnb-item:not(.active):hover::before {opacity:1; bottom:0}
-.lnb-indicator {position:absolute; left:0; bottom:0; height:5px; transition:.4s; border-radius:8px 8px 0 0; z-index:1}
-.lnb-item:hover {text-decoration:none}
-
-.filter-container {margin-bottom:100px}
-.filtr-item {box-sizing:border-box; padding:0}
-/* .filtr-item img {width:100%; height:100%} */
-/* .card {width:300px !important} */
-/*** footer ***/
-#footer {height:200px; background:#2ecc71}
+/** portfolio **/
 
 /*** horizon scroll ***/
-.horizon-scroll {position:fixed; top:0; width:10%; height:4px; background:#2ecc71; border-bottom:0.5px solid #eee}
+.horizon-scroll {position:fixed; top:0; left:260px; height:4px; background:#2ecc71; -moz-transition:width 0.1s ease; -ms-transition:width 0.1s ease; transition:width 0.1s ease}
 
 /*** footer ***/
-#footer {padding:30px 80px; color:#fff}
+#footer {padding:30px 80px 15px; color:#fff; background:#2ecc71}
 #footer > * {padding:10px 0}
 #footer a {text-decoration:none}
 #footer .sns li {float:left; position:relative; margin-left:5px}

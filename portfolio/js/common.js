@@ -1,6 +1,6 @@
 //filter lnb
-const indicator = document.querySelector('.lnb-indicator');
-const items = document.querySelectorAll('.lnb-item');
+const indicator = document.querySelector('.link-indicator');
+const items = document.querySelectorAll('.nav__link');
 
 function handleIndicator(el) {
   items.forEach(item => {
@@ -19,4 +19,10 @@ function handleIndicator(el) {
 items.forEach((item, index) => {
   item.addEventListener('click', (e) => { handleIndicator(e.target)});
   item.classList.contains('active') && handleIndicator(item);
+});
+
+//horizon scrolling
+$(window).scroll(function(){
+  var scrollPercent = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+  $(".horizon-scroll").css("width", scrollPercent + "%");
 });
