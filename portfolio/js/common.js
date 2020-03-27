@@ -26,3 +26,25 @@ $(window).scroll(function(){
   var scrollPercent = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
   $(".horizon-scroll").css("width", scrollPercent + "%");
 });
+
+//go to top
+$(".scroll-top").click(function(){
+  $("html").scrollTop(0);
+});
+$(window).scroll(function(){
+  const winScrollTop = $(window).scrollTop();
+  if(winScrollTop > 250) {
+    $(".scroll-top").css("display", "block");
+  } else {
+    $(".scroll-top").css("display","none");
+  }
+});
+
+//gnb
+$(".gnb li").click(function(){
+  const gnbText = $(this).text();
+  $(".gnb li").removeClass("on");
+  $(this).addClass("on");
+  $("#content .container-fluid").removeClass("visible");
+  $("#content .container-fluid"+"."+gnbText).addClass("visible");
+});

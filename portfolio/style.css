@@ -9,25 +9,32 @@ body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400
 /* gold #ffd700 *//* pink #ffc0cb #f5a6bc *//* black #222 #121214 */ /* ivory #ece6cc */ /* green #2ecc71 */ /* navy #12295b */ /* orange #f08400 */ /* red #d40718 */
 
 /*** common ***/
+/* horizon scroll */
+.horizon-scroll {position:fixed; top:0; left:260px; height:4px; background:#2ecc71; -moz-transition:width 0.1s ease; -ms-transition:width 0.1s ease; transition:width 0.1s ease}
+/* scroll top */
+.scroll-top {position:fixed; right:30px; bottom:30px; display:none}
+.scroll-top button {width:20px; height:20px; border:1px solid #121214; border-width:1px 1px 0 0; transform:rotate(-45deg); outline:0; transition:.5s}
+.scroll-top:hover button {transform:rotate(315deg)}
 
 /*** Nav ***/
 #nav {position:fixed; padding:200px 50px; width:260px; height:100vh; background:#eee; text-align:center; z-index:10}
 .logo {width:160px; text-align:center}
 .logo img {width:100%; height:100%}
 .gnb {padding:50px 0; font-size:24px; font-weight:bold}
-.gnb li {padding:5px 0}
-.gnb li:hover a {color:#2ecc71}
-.gnb a {text-decoration:none; transition-duration:.35s}
+.gnb li {padding:5px 0; cursor:pointer; text-transform:uppercase; transition: 0.3s;}
+.gnb li:hover {color:#2ecc71}
+.gnb li.on {color:#2ecc71}
 .copyright {position:absolute; left:50%; bottom:50px; transform:translateX(-50%); font-size:12px}
+
 
 /*** Content ***/
 #content {padding-left:260px}
-.container-fluid {padding-left:80px !important; padding-right:80px !important; padding-top:60px}
+.container-fluid {padding:60px 80px 50px 80px !important}
+#content .container-fluid {display:none}
+#content .container-fluid.visible {display:block}
 
 /** portfolio **/
-
-/*** horizon scroll ***/
-.horizon-scroll {position:fixed; top:0; left:260px; height:4px; background:#2ecc71; -moz-transition:width 0.1s ease; -ms-transition:width 0.1s ease; transition:width 0.1s ease}
+#content .container-fluid.portfolio .wrapper {padding-top:0}
 
 /*** footer ***/
 #footer {padding:30px 80px 15px; color:#fff; background:#2ecc71}
@@ -48,4 +55,3 @@ body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400
 #footer .quick-contact dd {position:relative}
 #footer .quick-contact dd:hover a {color:#fff}
 #footer .signature {padding-top:30px}
-.go-top {position:absolute; top:0; left:0}
