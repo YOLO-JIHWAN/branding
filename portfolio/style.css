@@ -9,6 +9,8 @@ body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400
 /* gold #ffd700 *//* pink #ffc0cb #f5a6bc *//* black #222 #121214 */ /* ivory #ece6cc */ /* green #2ecc71 */ /* navy #12295b */ /* orange #f08400 */ /* red #d40718 */
 
 /*** common ***/
+table caption {display:none}
+form legend {display:none}
 /* horizon scroll */
 .horizon-scroll {position:fixed; top:0; left:260px; height:4px; background:#2ecc71; -moz-transition:width 0.1s ease; -ms-transition:width 0.1s ease; transition:width 0.1s ease}
 /* scroll top */
@@ -114,7 +116,9 @@ body {font-size:inherit; font-family:'Noto Sans KR', sans-serif; font-weight:400
 		border:5px solid #2ecc71;
 	}
 }
+.about .profile .tab-pane h4 {color:#aaa}
 
+/** contact **/
 /*** footer ***/
 #footer {padding:30px 80px 15px; color:#fff; background:#2ecc71}
 #footer > * {padding:10px 0}
