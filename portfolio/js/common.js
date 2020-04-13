@@ -48,3 +48,29 @@ $(".gnb li").click(function(){
   $("#content .container-fluid").removeClass("visible");
   $("#content .container-fluid"+"."+gnbText).addClass("visible");
 });
+
+//skill progress-bar
+/*
+$(".nav-tabs .nav-item").click(function(){
+  if($(this).children().attr("href") == "#skillInfo") {
+    $(".profile .progress-bar").each(function(){
+      console.log($(this));
+      // let profileProgressbar = $(this).attr("aria-valuenow");
+      // $(this).width(profileProgressbar + "%");
+    });
+  } else {
+    $(".profile .progress-bar").width(0);
+  }
+});
+*/
+function movingProgressBar () {
+  let progressBar = $(".profile .progress-bar");
+  let skillsTab = $(".profile .nav-link")
+  let skillsTabHref = skillsTab.attr("href");
+  let barValue = progressBar.each(function(){
+    $(this).attr("aria-valuenow")
+  });
+
+  // console.log(barValue);
+}
+movingProgressBar();
