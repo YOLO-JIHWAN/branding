@@ -50,27 +50,32 @@ $(".gnb li").click(function(){
 });
 
 //skill progress-bar
-/*
-$(".nav-tabs .nav-item").click(function(){
-  if($(this).children().attr("href") == "#skillInfo") {
-    $(".profile .progress-bar").each(function(){
-      console.log($(this));
-      // let profileProgressbar = $(this).attr("aria-valuenow");
-      // $(this).width(profileProgressbar + "%");
+$(".profile .nav-tabs .nav-item").on("click", function(){
+  let navLinkHerf = $(this).children().attr("href");
+  if(navLinkHerf == "#skillInfo") {
+    let progressBar = $("#skillInfo .progress .progress-bar");
+    progressBar.each(function(){
+      let barValueNow = $(this).attr("aria-valuenow");
+      $(this).width(barValueNow + "%");
+      $(this).text(barValueNow + "%");
     });
   } else {
-    $(".profile .progress-bar").width(0);
+    $("#skillInfo .progress .progress-bar").width(0);
+    $("#skillInfo .progress .progress-bar").text("");
   }
 });
-*/
-function movingProgressBar () {
-  let progressBar = $(".profile .progress-bar");
-  let skillsTab = $(".profile .nav-link")
-  let skillsTabHref = skillsTab.attr("href");
-  let barValue = progressBar.each(function(){
-    $(this).attr("aria-valuenow")
-  });
 
-  // console.log(barValue);
+//Contact
+/*
+let regPhoneNum = /^\d{3}-\d{3,4}-\d{4}$/;
+if(!regPhoneNum.test($("input[name='c-pnumber']").val())){
+  return false;
 }
-movingProgressBar();
+*/
+//Validate
+//email validate
+function chkEmail(str) {
+  let regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+  if(regEmail.test(str)) return true;
+  else return false;
+}

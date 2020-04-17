@@ -124,8 +124,19 @@ form legend {display:none}
 .about .profile .nav-tabs .nav-link.active {border-color:#2ecc71}
 .about .profile .tab-pane h4 {color:#aaa}
 .about .profile .table th {padding-left:0}
-.about .profile .progress-bar {width:0%; transition:width 1.5s ease-in-out}
+.about .profile .progress {transition:width 1.5s ease-in-out}
 /** contact **/
+.contact .contact-form-wrap {padding:0}
+.contact .contact-form-wrap .des {padding:0; color:#aaa}
+.contact .contact-form-wrap form {padding:0}
+.contact .contact-form-wrap form fieldset > * {width:100%}
+.contact .contact-form-wrap form fieldset h3 {font-weight:600}
+.contact .contact-form-wrap input {padding:5px 10px; height:40px; background:#fff; border:1px solid #2ecc71; border-radius:5px; color:#2ecc71}
+.contact .contact-form-wrap input:hover, .contact .contact-form-wrap input:focus, .contact .contact-form-wrap input:active {background:rgba(46,204,112,.1); border-color:rgba(46,204,112,.1)}
+.contact .contact-form-wrap textarea {padding:5px 10px; background:#fff; border:1px solid #2ecc71; border-radius:5px; color:#2ecc71; resize:none}
+.contact .contact-form-wrap textarea:hover, .contact .contact-form-wrap textarea:focus, .contact .contact-form-wrap textarea:active {background:rgba(46,204,112,.1); border-color:rgba(46,204,112,.1)}
+.contact form fieldset .btn {background:#2ecc71; color:#fff}
+.contact form fieldset .btn:hover {background:#24a55a}
 /*** footer ***/
 #footer {padding:30px 80px 15px; color:#fff; background:#2ecc71}
 #footer > * {padding:10px 0}

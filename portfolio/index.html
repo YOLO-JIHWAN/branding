@@ -259,7 +259,7 @@
 										<th>HTML5</th>
 										<td>
 											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-vlauemax="100"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-vlauemax="100"></div>
 											</div>
 										</td>
 									</tr>
@@ -267,7 +267,7 @@
 										<th>CSS3</th>
 										<td>
 											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-vlauemax="100"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-vlauemax="100"></div>
 											</div>
 										</td>
 									</tr>
@@ -275,7 +275,7 @@
 										<th>JAVASCRIPT</th>
 										<td>
 											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-vlauemax="100"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-vlauemax="100"></div>
 											</div>
 										</td>
 									</tr>
@@ -283,7 +283,7 @@
 										<th>jQuery</th>
 										<td>
 											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-vlauemax="100"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-vlauemax="100"></div>
 											</div>
 										</td>
 									</tr>
@@ -291,7 +291,7 @@
 										<th>Bootstrap</th>
 										<td>
 											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-vlauemax="100"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-vlauemax="100"></div>
 											</div>
 										</td>
 									</tr>
@@ -299,7 +299,7 @@
 										<th>Design Skills</th>
 										<td>
 											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-vlauemax="100"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-vlauemax="100"></div>
 											</div>
 										</td>
 									</tr>
@@ -313,24 +313,30 @@
 				<div class="page-info">
 					<h2 class="title display-2 font-weight-bold text-uppercase">contact</h2>
 					<div class="description h5">
-						<p class="kor">언제든 편하게 연락주세요. 언제든 당신과 함께 할 준비가 되어있습니다.</p>
-						<p class="eng">Feel free to contact me anytime. I'm always ready to be with you.</p>
+						<p class="kor" style="display:none">편하게 연락주세요. 언제든 당신과 함께 할 준비가 되어있습니다.</p>
+						<p class="eng">Please feel free to contact me. I'm always ready to be with you.</p>
 					</div>
 				</div>
-				<form name="" action="" method="" class="">
-					<fieldset>
-						<legend>CONTACT FORM</legend>
-						<h3 class="text-uppercase">name</h3>
-						<input type="text" name="" value="">
-						<h3 class="text-uppercase">phone</h3>
-						<input type="number" name="" id="">
-						<h3 class="text-uppercase">phone</h3>
-						<input type="email" name="" id="">
-						<h3 class="text-uppercase">message</h3>
-						<textarea name="" id="" cols="30" rows="10"></textarea>
-						<button type="submit" class="text-uppercase">send</button>
-					</fieldset>
-				</form>
+				<div class="col-md-12 col-sm-12 mt-5 contact-form-wrap">
+					<div class="des mb-3 col-md-12 col-sm-12">
+						<p class="kor" style="display:none">아래의 정보를 기입하고 연락주시면 빠른 시일 내에 답변 드리겠습니다.</p>
+						<p class="eng">Please fill out the information below and contact us and we will reply as soon as possible.</p>
+					</div>
+					<form name="" action="" method="" class="col-md-5 col-sm-12">
+						<fieldset>
+							<legend>CONTACT FORM</legend>
+							<h3 class="text-uppercase mb-1">name</h3>
+							<input type="text" name="c-name" value="" placeholder="Your Name" required>
+							<h3 class="text-uppercase mb-1 mt-3">phone number</h3>
+							<input type="number" name="c-pnumber" id="" placeholder="Your Phone Number" pattern="" required>
+							<h3 class="text-uppercase mb-1 mt-3">e-mail</h3>
+							<input type="email" name="c-email" id="contactEmail" placeholder="Your E-mail" required pattern="/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/">
+							<h3 class="text-uppercase mb-1 mt-3">message</h3>
+							<textarea name="c-message" id="" cols="30" rows="15" placeholder="Input Your Message" required></textarea>
+							<button type="submit" class="text-uppercase d-block btn mt-3">send</button>
+						</fieldset>
+					</form>
+				</div>
 			</div>
 			<div class="horizon-scroll"></div>
 			<footer id="footer">
