@@ -56,8 +56,9 @@ $(".profile .nav-tabs .nav-item").on("click", function(){
     let progressBar = $("#skillInfo .progress .progress-bar");
     progressBar.each(function(){
       let barValueNow = $(this).attr("aria-valuenow");
-      $(this).width(barValueNow + "%");
-      $(this).text(barValueNow + "%");
+      //use backtik
+      $(this).width(`${barValueNow}%`);
+      $(this).text(`${barValueNow}%`);
     });
   } else {
     $("#skillInfo .progress .progress-bar").width(0);
@@ -65,17 +66,4 @@ $(".profile .nav-tabs .nav-item").on("click", function(){
   }
 });
 
-//Contact
-/*
-let regPhoneNum = /^\d{3}-\d{3,4}-\d{4}$/;
-if(!regPhoneNum.test($("input[name='c-pnumber']").val())){
-  return false;
-}
-*/
 //Validate
-//email validate
-function chkEmail(str) {
-  let regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-  if(regEmail.test(str)) return true;
-  else return false;
-}
