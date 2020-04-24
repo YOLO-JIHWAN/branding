@@ -58,11 +58,72 @@ function loadName() {
     }
 }
 
+//to-do list
+const toDoForm = document.querySelector(".js-toDoForm"),
+    toDoInput = toDoForm.querySelector("input"),
+    toDoList = document.querySelector(".js-toDoList");
+
+const TODOS_LS = "toDos";
+const toDos = [];
+
+//html todo list remove
+function deleteToDo(event) {
+    //.dir detail tag
+    const clickThisBtn = event.target;
+    const clickThisLi = clickThisBtn.parentNode;
+    toDoList.removeChild(clickThisLi);
+}
+
+function saveToDos() {
+    //object transfer string
+    localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+}
+
+function writeToDo(text) {
+    const toDoListLi = document.createElement("li");
+    const listDelBtn = document.createElement("button");
+    const newId = toDos.length + 1;
+    listDelBtn.innerText ="X"; //delete button
+    listDelBtn.addEventListener("click", deleteToDo);
+    const listSpan = document.createElement("span");
+    listSpan.innerText = text;
+    toDoListLi.appendChild(listSpan);
+    toDoListLi.appendChild(listDelBtn);
+    toDoListLi.id = newId;
+    toDoList.appendChild(toDoListLi);
+    const toDoObj = {
+        text: text,
+        id : newId
+    }
+    toDos.push(toDoObj);
+    saveToDos();
+}
+
+function handleToDoSubmit(event) {
+    event.preventDefault();
+    const currentToDo = toDoInput.value;
+    writeToDo(currentToDo);
+    toDoInput.value == ""; //enter regist
+}
+
+function loadToDos() {
+    const loadedToDos = localStorage.getItem(TODOS_LS);
+    if(loadedToDos !== null) {
+        //JSON = Javascript Object Notation
+        const parsedToDos = JSON.parse(loadedToDos); //String transfer object
+        //forEach = array repeat once
+        parsedToDos.forEach(function(toDo){
+            writeToDo(toDo.text);
+        });
+    }
+}
 
 function init() {
     getTime();
     setInterval(getTime, 1000);
     loadName();
+    loadToDos();
+    toDoForm.addEventListener("submit", handleToDoSubmit);
 }
 
 init();
