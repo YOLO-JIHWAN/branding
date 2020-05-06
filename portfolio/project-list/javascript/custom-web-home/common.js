@@ -64,7 +64,9 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
-const toDos = [];
+
+//For todo array modify
+let toDos = [];
 
 //html todo list remove
 function deleteToDo(event) {
@@ -72,6 +74,11 @@ function deleteToDo(event) {
     const clickThisBtn = event.target;
     const clickThisLi = clickThisBtn.parentNode;
     toDoList.removeChild(clickThisLi);
+    const cleanToDos = toDos.filter(function(toDo){
+        return toDo.id !== parseInt(clickThisLi.id);
+    });
+    toDos = cleanToDos;
+    saveToDos();
 }
 
 function saveToDos() {
@@ -118,12 +125,81 @@ function loadToDos() {
     }
 }
 
+//change background
+const body = document.querySelector("body");
+//images count
+const IMG_NUMBER = 7;
+
+function loadImages(imgNumber) {
+    const image = new Image();
+    image.src = `images/${imgNumber + 1}.jpg`;
+    image.classList.add("bgImage");
+    body.appendChild(image);
+}
+
+function genRandom() {
+    const number = Math.floor(Math.random() * IMG_NUMBER);
+    return number;
+}
+
+//weather
+const weather = document.querySelector(".js-weather");
+const API_KEY = "ba77522d5fec3d94a7afd5cfae6a0e8b";
+const COORDS = "coords";
+
+function getWeather(lat, lng) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`).then(function(response) {
+        return response.json()
+    }).then(function(json) {
+        const temperature = Math.floor(json.main.temp);
+        const place = json.name; //local
+        weather.innerText = `${temperature}℃ @${place}`;
+    });
+}
+
+function saveCoords(coordsObj) {
+    localStorage.setItem(COORDS, JSON.stringify(coordsObj));
+}
+
+function handleGeoSuccess(position) {
+   const latitude = position.coords.latitude; //위도
+   const longitude = position.coords.longitude; //경도
+   const coordsObj = {
+       latitude,
+       longitude
+   };
+   saveCoords(coordsObj);
+   getWeather(latitude, longitude);
+}
+
+function handleGeoError() {
+    console.log("위치 정보를 받아 올 수 없습니다.");
+}
+
+function askForCoords() {
+    navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
+}
+
+function loadCoords() {
+    const loadedCoords = localStorage.getItem(COORDS);
+    if(loadedCoords === null) {
+        askForCoords();
+    } else {
+        //getWeather
+        const parsedCoords = JSON.parse(loadedCoords);
+        getWeather(parsedCoords.latitude, parsedCoords.longitude);
+    }
+}
+
 function init() {
     getTime();
     setInterval(getTime, 1000);
     loadName();
     loadToDos();
     toDoForm.addEventListener("submit", handleToDoSubmit);
+    const randomNumber = genRandom();
+    loadImages(randomNumber);
+    loadCoords();
 }
 
 init();
