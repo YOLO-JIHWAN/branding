@@ -1,9 +1,8 @@
 body {padding:0; margin:0; position:relative; width:100%; height:100vh; background:#353b48}
-p {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; font-size:120px}
+.custom-wrap {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); padding:20px; background:rgba(255,255,255,0.45); color:#000; text-align:center}
+p {font-size:120px}
 p span {font-size:40px}
-.js-form {display:none}
-.js-form input {border:none; border-bottom:2px solid #fff; background:transparent; text-align:center; font-size:36px; color:#fff}
-.js-form input::placeholder {color:#fff}
+.js-form {display:none; position:relative; padding:15px 0 0; width:100%}
 .js-greeting {display:none}
 .showing {display:block}
 .bgImage {position:absolute; top:0; left:0; width:100vw; height:100vh; z-index:-1; animation:fadeIn .5s linear}
@@ -16,3 +15,24 @@ p span {font-size:40px}
         opacity:1;
     }
 }
+.js-form .name-input {padding:7px 0; width:100%; border:none; border-bottom:2px solid #9b9b9b; outline:0; color:#fff; transition:border-color 0.2s; background:transparent}
+.name-input::placeholder {color:transparent}
+.name-input:placeholder-shown ~ .name-label {cursor:text; top:20px}
+.name-label {position:absolute; top:0; display:block; transition:0.2s; color:#9b9b9b}
+.name-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #11998e, #38ef7d); border-image-slice:1}
+.name-input:focus ~ .name-label {position:absolute; top:0; display:block; transition:0.2s; color:#11998e;}
+.name-input:required, .name-input:invalid {box-shadow:none}
+
+.js-toDoForm {position:relative; padding:15px 0 0; width:100%}
+.js-toDoForm .todo-input {padding:7px 0; width:100%; border:none; border-bottom:2px solid #9b9b9b; outline:0; color:#fff; transition:border-color 0.2s; background:transparent}
+.todo-input::placeholder {color:transparent}
+.todo-input:placeholder-shown ~ .todo-label {cursor:text; top:20px}
+.todo-label {position:absolute; top:0; display:block; transition:0.2s; color:#9b9b9b}
+.todo-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #11998e, #38ef7d); border-image-slice:1}
+.todo-input:focus ~ .todo-label {position:absolute; top:0; display:block; transition:0.2s; color:#11998e;}
+.todo-input:required, .todo-input:invalid {box-shadow:none}
+.js-weather {position:absolute; top:10px; right:10px; color:#fff; font-weight:800}
+
+.clock {position:relative}
+.block {width:calc(100% / 12)}
+.divider {background:#333}
