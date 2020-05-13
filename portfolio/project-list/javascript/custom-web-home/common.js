@@ -21,7 +21,7 @@ for (let i = 0; i < 4; i++) {
 
 const setNum = (block, num) => {
     let n = numbers[num];
-    for (let i = 0; i <block.length; i++) {
+    for (let i = 0; i < block.length; i++) {
         block[i].classList[ n[i] === 1 ? 'add' : 'remove']("active");
     }
 }
@@ -37,7 +37,7 @@ const animator = () => {
     let d = new Date(),
         h = d.getHours().toString(),
         m = d.getMinutes().toString(),
-        s = m.getSeconds().toString();
+        s = d.getSeconds().toString();
 
     s = s.length === 1 ? "0" + s : s;
     m = m.length === 1 ? "0" + m : m;
@@ -64,13 +64,14 @@ const animator = () => {
 
     if (h !== time.h) {
         setNum(blocks[0], h[0]);
-        setNum(blocks)
+        setNum(blocks[1], h[1]);
+        time.h = h;
     }
     window.requestAnimationFrame(animator);
 }
-
 window.requestAnimationFrame(animator);
 
+/*
 const clockContainer = document.querySelector(".js-clock"),
     clockTitle = clockContainer.querySelector("strong"),
     clockAmPm = clockContainer.querySelector("span");
@@ -80,14 +81,9 @@ function getTime () {
     const minutes = date.getMinutes();
     const hours = date.getHours();
     const seconds = date.getSeconds();
-    /*
-    if(hours >= 12) {
-        clockAmPm = "PM";
-        hours = (date.getHours() - 2);
-    }
-    */
     clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
 }
+*/
 
 //greeting
 const form = document.querySelector(".js-form"),
@@ -144,10 +140,18 @@ let toDos = [];
 function deleteToDo(event) {
     //.dir detail tag
     const clickThisBtn = event.target;
-    const clickThisLi = clickThisBtn.parentNode;
-    toDoList.removeChild(clickThisLi);
+    console.log(clickThisBtn);
+    const clickThisLi1 = clickThisBtn.parentElement.parentElement;
+    const clickThisLi2 = clickThisBtn.parentElement;
+    const clickThisLi3 = clickThisBtn.parentElement;
+    console.log(clickThisLi3);
+    toDoList.removeChild(clickThisLi1);
+    toDoList.removeChild(clickThisLi2);
+    toDoList.removeChild(clickThisLi3);
     const cleanToDos = toDos.filter(function(toDo){
-        return toDo.id !== parseInt(clickThisLi.id);
+        return toDo.id !== parseInt(clickThisLi2.id);
+        return toDo.id !== parseInt(clickThisLi2.id);
+        return toDo.id !== parseInt(clickThisLi3.id);
     });
     toDos = cleanToDos;
     saveToDos();
@@ -160,19 +164,26 @@ function saveToDos() {
 
 function writeToDo(text) {
     const toDoListLi = document.createElement("li");
-    const listDelBtn = document.createElement("button");
+    const listDelBtn = document.createElement("span");
+    const deleteCover = document.createElement("div");
+    const deleteBody = document.createElement("div");
     const newId = toDos.length + 1;
-    listDelBtn.innerText ="X"; //delete button
+    listDelBtn.setAttribute("class", "del-btn");
     listDelBtn.addEventListener("click", deleteToDo);
+    // deleteCover.insertBefore()
     const listSpan = document.createElement("span");
     listSpan.innerText = text;
     toDoListLi.appendChild(listSpan);
     toDoListLi.appendChild(listDelBtn);
+    listDelBtn.appendChild(deleteCover);
+    listDelBtn.appendChild(deleteBody);
+    deleteCover.setAttribute("class", "del-cover");
+    deleteBody.setAttribute("class", "del-body");
     toDoListLi.id = newId;
     toDoList.appendChild(toDoListLi);
     const toDoObj = {
         text: text,
-        id : newId
+        id: newId
     }
     toDos.push(toDoObj);
     saveToDos();
@@ -264,8 +275,8 @@ function loadCoords() {
 }
 
 function init() {
-    getTime();
-    setInterval(getTime, 1000);
+    // getTime();
+    // setInterval(getTime, 1000);
     loadName();
     loadToDos();
     toDoForm.addEventListener("submit", handleToDoSubmit);

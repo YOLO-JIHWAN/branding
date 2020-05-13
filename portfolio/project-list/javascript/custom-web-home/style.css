@@ -1,12 +1,75 @@
 body {padding:0; margin:0; position:relative; width:100%; height:100vh; background:#353b48}
-.custom-wrap {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); padding:20px; background:rgba(255,255,255,0.45); color:#000; text-align:center}
+.custom-wrap {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); padding:20px; background:rgba(0, 0, 0, 0.3); color:#000; text-align:center; transition:.4s; }
 p {font-size:120px}
 p span {font-size:40px}
-.js-form {display:none; position:relative; padding:15px 0 0; width:100%}
-.js-greeting {display:none}
-.showing {display:block}
-.bgImage {position:absolute; top:0; left:0; width:100vw; height:100vh; z-index:-1; animation:fadeIn .5s linear}
 
+/* user name */
+.js-form {display:none; position:relative; padding:15px 0 0; margin:25px 0; width:100%}
+.js-greetings {display:none; color:#fff; font-size:32px; font-weight:800; text-transform:uppercase}
+.showing {display:block}
+.js-form .name-input {padding:7px 0; width:100%; border:none; border-bottom:2px solid #fff; outline:0; color:#fff; transition:border-color 0.2s; background:transparent; font-size:30px; text-transform:uppercase}
+.name-input::placeholder {color:transparent; font-size:100%}
+.name-input:placeholder-shown ~ .name-label {cursor:text; top:34px}
+.name-label {position:absolute; top:0; display:block; transition:0.2s; color:#fff; font-size:20px; font-weight:400}
+.name-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #ccc, #fff); border-image-slice:1}
+.name-input:focus ~ .name-label {position:absolute; top:-4px; display:block; transition:0.2s; color:#fff; font-size:16px; font-weight:800}
+.name-input:required, .name-input:invalid {box-shadow:none}
+
+/* todo list */
+.js-toDoForm {position:relative; padding:15px 0 0; width:100%}
+.js-toDoForm .todo-input {padding:7px 0; width:100%; border:none; border-bottom:2px solid #fff; outline:0; color:#fff; transition:border-color 0.2s; background:transparent; font-size:30px; text-transform:uppercase}
+.todo-input::placeholder {color:transparent}
+.todo-input:placeholder-shown ~ .todo-label {cursor:text; top:34px}
+.todo-label {position:absolute; top:0; display:block; transition:0.2s; color:#fff; font-size:20px; font-weight:400}
+.todo-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #11998e, #fff); border-image-slice:1}
+.todo-input:focus ~ .todo-label {position:absolute; top:-4px; display:block; transition:0.2s; color:#fff; font-size:16px; font-weight:800}
+.todo-input:required, .todo-input:invalid {box-shadow:none}
+.js-toDoList li {text-transform:uppercase; color:#fff; text-align:left}
+.js-toDoList li span {padding:4px; line-height:1.25rem; font-size:18px}
+.js-toDoList li .del-btn {display:inline-block; position:relative; padding:2px; background:transparent; cursor:pointer}
+.js-toDoList li .del-btn div {display:inline-block; position:relative; background:#fff}
+.js-toDoList li .del-btn div.del-cover {top:-13px; left:0; width:21px; height:2px; border-radius:2px 2px 0 0; transform:translate(0, 0)}
+.js-toDoList li .del-btn div.del-cover::before {content:""; position:absolute; top:-1px; left:30%; width:8px; height:2px; background:#fff; border-radius:2px 2px 0 0}
+.js-toDoList li .del-btn:hover div.del-cover {animation:cover 1s}
+.js-toDoList li .del-btn:hover div {background:#f24848}
+.js-toDoList li .del-btn:hover div.del-cover::before {background:#f24848}
+.js-toDoList li .del-btn div.del-body {top:4px; left:-19px; width:17px; height:16px; border-radius:0 0 2px 2px}
+.js-toDoList li .del-btn div.del-body::before {content:""; position:absolute; top:2px; left:2px; width:2px; height:12px; background:#000; border-radius:0 0 0 3px}
+.js-toDoList li .del-btn:hover div.del-body::before {background:#fff}
+
+@keyframes cover {
+    0% {
+        top:-13px;
+        transform:rotate(0deg);
+    }
+    20% {
+        top:-18px;
+        transform:rotate(0deg);
+    }
+    30% {
+        top:-18px;
+        transform:rotate(-8deg);
+    }
+    40% {
+        top:-18px;
+        transform:rotate(20deg);
+    }
+    50% {
+        top:-18px;
+        transform:rotate(-8deg);
+    }
+    60% {
+        top:-18px;
+        transform:rotate(0deg);
+    }
+    80% {
+        top:-13px;
+        transform:rotate(0deg);
+    }
+}
+
+/* background */
+.bgImage {position:absolute; top:0; left:0; width:100vw; height:100vh; z-index:-1; animation:fadeIn .5s linear}
 @keyframes fadeIn {
     from {
         opacity:0;
@@ -15,24 +78,11 @@ p span {font-size:40px}
         opacity:1;
     }
 }
-.js-form .name-input {padding:7px 0; width:100%; border:none; border-bottom:2px solid #9b9b9b; outline:0; color:#fff; transition:border-color 0.2s; background:transparent}
-.name-input::placeholder {color:transparent}
-.name-input:placeholder-shown ~ .name-label {cursor:text; top:20px}
-.name-label {position:absolute; top:0; display:block; transition:0.2s; color:#9b9b9b}
-.name-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #11998e, #38ef7d); border-image-slice:1}
-.name-input:focus ~ .name-label {position:absolute; top:0; display:block; transition:0.2s; color:#11998e;}
-.name-input:required, .name-input:invalid {box-shadow:none}
 
-.js-toDoForm {position:relative; padding:15px 0 0; width:100%}
-.js-toDoForm .todo-input {padding:7px 0; width:100%; border:none; border-bottom:2px solid #9b9b9b; outline:0; color:#fff; transition:border-color 0.2s; background:transparent}
-.todo-input::placeholder {color:transparent}
-.todo-input:placeholder-shown ~ .todo-label {cursor:text; top:20px}
-.todo-label {position:absolute; top:0; display:block; transition:0.2s; color:#9b9b9b}
-.todo-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #11998e, #38ef7d); border-image-slice:1}
-.todo-input:focus ~ .todo-label {position:absolute; top:0; display:block; transition:0.2s; color:#11998e;}
-.todo-input:required, .todo-input:invalid {box-shadow:none}
+/* weather */
 .js-weather {position:absolute; top:10px; right:10px; color:#fff; font-weight:800}
 
-.clock {position:relative}
+
+.clock {position:relative; display:flex; flex-flow:column wrap; width:280px; height:100px;}
 .block {width:calc(100% / 12)}
-.divider {background:#333}
+.divider {position:absolute; top:20%; left:50%; width:2px; background:#333}
