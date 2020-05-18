@@ -27,7 +27,7 @@ p span {font-size:40px}
 .todo-input:focus ~ .todo-label {position:absolute; top:-4px; display:block; transition:0.2s; color:#f78fb3; font-size:16px; font-weight:800}
 .todo-input:required, .todo-input:invalid {box-shadow:none}
 .js-toDoList li {position:relative; padding:7px 0; text-transform:uppercase; color:#fff; text-align:left; list-style:none}
-.js-toDoList li::before {content:""; display:block; position:absolute; top:50%; left:-25px; width:18px; height:18px; transform:translate(0, -50%); background:url("../custom-web-home/images/list-style.png") no-repeat center}
+.js-toDoList li::before {content:""; display:block; position:absolute; top:50%; left:-25px; width:18px; height:18px; transform:translate(0, -50%); background:url("https://yolo-jihwan.github.io/branding/portfolio/project-list/javascript/custom-web-home/images/list-style.png") no-repeat center}
 .js-toDoList li::after {content:""; display:block; clear:both}
 .js-toDoList li span {float:left}
 .js-toDoList li span:not(.del-btn) {margin-right:3px; line-height:1.25rem; font-size:18px}
