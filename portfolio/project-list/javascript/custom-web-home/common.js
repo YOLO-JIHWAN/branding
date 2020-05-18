@@ -88,7 +88,8 @@ function getTime () {
 //greeting
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
-    greeting = document.querySelector(".js-greetings");
+    greeting = document.querySelector(".js-greetings"),
+    userName = document.querySelector(".user-name");
 
 const USER_LS = "currentUser",
     SHOWING_CN = "showing"; //CN = Class Name
@@ -112,7 +113,7 @@ function askForName() {
 function paintGreeting(text) {
     form.classList.remove(SHOWING_CN);
     greeting.classList.add(SHOWING_CN);
-    greeting.innerText = `Hello ${text}`;
+    userName.innerText = `${text}`;
 }
 
 //local storage
@@ -219,7 +220,9 @@ function genRandom() {
 }
 
 //weather
-const weather = document.querySelector(".js-weather");
+const weather = document.querySelector(".js-weather"),
+      temperText = document.querySelector(".temper"),
+      localText = document.querySelector(".local");
 const API_KEY = "ba77522d5fec3d94a7afd5cfae6a0e8b";
 const COORDS = "coords";
 
@@ -229,7 +232,8 @@ function getWeather(lat, lng) {
     }).then(function(json) {
         const temperature = Math.floor(json.main.temp);
         const place = json.name; //local
-        weather.innerText = `${temperature}℃ @${place}`;
+        temperText.innerText = `${temperature}℃`;
+        localText.innerText = `${place}`;
     });
 }
 
