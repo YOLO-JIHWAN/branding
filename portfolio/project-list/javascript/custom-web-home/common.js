@@ -22,7 +22,7 @@ for (let i = 0; i < 4; i++) {
 const setNum = (block, num) => {
     let n = numbers[num];
     for (let i = 0; i < block.length; i++) {
-        block[i].classList[ n[i] === 1 ? 'add' : 'remove']("active");
+        block[i].classList[ n[i] === 1 ? "add" : "remove"]("active");
     }
 }
 
@@ -32,7 +32,7 @@ const time = {
     h: "",
     p: null
 }
-
+//time loop
 const animator = () => {
     let d = new Date(),
         h = d.getHours().toString(),
@@ -140,18 +140,11 @@ let toDos = [];
 function deleteToDo(event) {
     //.dir detail tag
     const clickThisBtn = event.target;
-    console.log(clickThisBtn);
-    const clickThisLi1 = clickThisBtn.parentElement.parentElement;
-    const clickThisLi2 = clickThisBtn.parentElement;
-    const clickThisLi3 = clickThisBtn.parentElement;
-    console.log(clickThisLi3);
-    toDoList.removeChild(clickThisLi1);
-    toDoList.removeChild(clickThisLi2);
-    toDoList.removeChild(clickThisLi3);
+    const clickThisBtnWrap = clickThisBtn.parentNode;
+    const clickThisLi = clickThisBtnWrap.parentNode;
+    toDoList.removeChild(clickThisLi);
     const cleanToDos = toDos.filter(function(toDo){
-        return toDo.id !== parseInt(clickThisLi2.id);
-        return toDo.id !== parseInt(clickThisLi2.id);
-        return toDo.id !== parseInt(clickThisLi3.id);
+        return toDo.id !== parseInt(clickThisLi.id);
     });
     toDos = cleanToDos;
     saveToDos();

@@ -11,8 +11,8 @@ p span {font-size:40px}
 .name-input::placeholder {color:transparent; font-size:100%}
 .name-input:placeholder-shown ~ .name-label {cursor:text; top:34px}
 .name-label {position:absolute; top:0; display:block; transition:0.2s; color:#fff; font-size:20px; font-weight:400}
-.name-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #ccc, #fff); border-image-slice:1}
-.name-input:focus ~ .name-label {position:absolute; top:-4px; display:block; transition:0.2s; color:#fff; font-size:16px; font-weight:800}
+.name-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #f78fb3, #fff); border-image-slice:1}
+.name-input:focus ~ .name-label {position:absolute; top:-4px; display:block; transition:0.2s; color:#f78fb3; font-size:16px; font-weight:800}
 .name-input:required, .name-input:invalid {box-shadow:none}
 
 /* todo list */
@@ -21,19 +21,21 @@ p span {font-size:40px}
 .todo-input::placeholder {color:transparent}
 .todo-input:placeholder-shown ~ .todo-label {cursor:text; top:34px}
 .todo-label {position:absolute; top:0; display:block; transition:0.2s; color:#fff; font-size:20px; font-weight:400}
-.todo-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #11998e, #fff); border-image-slice:1}
-.todo-input:focus ~ .todo-label {position:absolute; top:-4px; display:block; transition:0.2s; color:#fff; font-size:16px; font-weight:800}
+.todo-input:focus {padding-bottom:6px; border-width:3px; border-image:linear-gradient(to right, #f78fb3, #fff); border-image-slice:1}
+.todo-input:focus ~ .todo-label {position:absolute; top:-4px; display:block; transition:0.2s; color:#f78fb3; font-size:16px; font-weight:800}
 .todo-input:required, .todo-input:invalid {box-shadow:none}
 .js-toDoList li {text-transform:uppercase; color:#fff; text-align:left}
-.js-toDoList li span {padding:4px; line-height:1.25rem; font-size:18px}
-.js-toDoList li .del-btn {display:inline-block; position:relative; padding:2px; background:transparent; cursor:pointer}
+.js-toDoList li::after {content:""; display:block; clear:both}
+.js-toDoList li span {float:left}
+.js-toDoList li span:not(.del-btn) {margin-right:3px; line-height:1.25rem; font-size:18px}
+.js-toDoList li .del-btn {display:inline-block; position:relative; width:22px; height:22px; background:transparent; cursor:pointer}
 .js-toDoList li .del-btn div {display:inline-block; position:relative; background:#fff}
 .js-toDoList li .del-btn div.del-cover {top:-13px; left:0; width:21px; height:2px; border-radius:2px 2px 0 0; transform:translate(0, 0)}
 .js-toDoList li .del-btn div.del-cover::before {content:""; position:absolute; top:-1px; left:30%; width:8px; height:2px; background:#fff; border-radius:2px 2px 0 0}
 .js-toDoList li .del-btn:hover div.del-cover {animation:cover 1s}
 .js-toDoList li .del-btn:hover div {background:#f24848}
 .js-toDoList li .del-btn:hover div.del-cover::before {background:#f24848}
-.js-toDoList li .del-btn div.del-body {top:4px; left:-19px; width:17px; height:16px; border-radius:0 0 2px 2px}
+.js-toDoList li .del-btn div.del-body {top:-16px; left:2px; width:17px; height:16px; border-radius:0 0 2px 2px}
 .js-toDoList li .del-btn div.del-body::before {content:""; position:absolute; top:2px; left:2px; width:2px; height:12px; background:#000; border-radius:0 0 0 3px}
 .js-toDoList li .del-btn:hover div.del-body::before {background:#fff}
 
@@ -82,7 +84,13 @@ p span {font-size:40px}
 /* weather */
 .js-weather {position:absolute; top:10px; right:10px; color:#fff; font-weight:800}
 
-
-.clock {position:relative; display:flex; flex-flow:column wrap; width:280px; height:100px;}
-.block {width:calc(100% / 12)}
-.divider {position:absolute; top:20%; left:50%; width:2px; background:#333}
+/* clock */
+.clock {position:relative; display:flex; flex-flow:column wrap; margin-left:21.25px; width:280px; height:100px}
+.block {width:calc(100% / 12); height:20%; color:rgba(255, 255, 255, 0.55); transition:.4s; font-weight:600}
+.block:not(:nth-child(N+16)):nth-child(n+11), .block:not(:nth-child(n+46)):nth-child(n+41) {margin-right:10px}
+.block:not(:nth-child(n+31)):nth-child(n+26) {margin-right:20px}
+.block::before {content:attr(data-num); position:relative; display:block; font-size:16px; width:100%; height:100%; line-height:20px; text-align:center}
+.block:nth-child(-n+10)::before {content:"0" attr(data-num)}
+.block.active::before {color:#fff}
+.block.second::before {color:#ff7675}
+.divider {position:absolute; top:20%; left:calc(50% + 19px); width:2px; height:60%; background:#fff}
