@@ -7,7 +7,6 @@ function handleIndicator(el) {
     item.classList.remove('active');
     item.removeAttribute('style');
   });
-  
   indicator.style.width = `${el.offsetWidth}px`;
   indicator.style.left = `${el.offsetLeft}px`;
   indicator.style.backgroundColor = el.getAttribute('active-color');
@@ -15,6 +14,8 @@ function handleIndicator(el) {
   el.classList.add('active');
   el.style.color = el.getAttribute('active-color');
 }
+
+//resizing 
 
 items.forEach((item, index) => {
   item.addEventListener('click', (e) => { handleIndicator(e.target)});
@@ -48,6 +49,24 @@ $(".gnb li").click(function(){
   $("#content .container-fluid").removeClass("visible");
   $("#content .container-fluid"+"."+gnbText).addClass("visible");
 });
+
+$(".mob-gnb li").click(function(){
+  const mobGnbText = $(this).children().text();
+  $("#content .container-fluid").removeClass("visible");
+  $("#content .container-fluid"+"."+mobGnbText).addClass("visible");
+  $("#header").removeClass("opened");
+});
+
+//mobile gnb
+function mobOpen() {
+  const burger = document.querySelector(".burger-wrap"),
+      mobHeader = document.querySelector("#header");
+
+      burger.onclick = function() {
+        mobHeader.classList.toggle("opened");
+      }
+}
+mobOpen();
 
 //skill progress-bar
 $(".profile .nav-tabs .nav-item").on("click", function(){
