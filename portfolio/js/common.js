@@ -11,15 +11,18 @@ function handleIndicator(el) {
   indicator.style.left = `${el.offsetLeft}px`;
   indicator.style.backgroundColor = el.getAttribute('active-color');
 
+
   el.classList.add('active');
   el.style.color = el.getAttribute('active-color');
 }
 
-//resizing 
-
 items.forEach((item, index) => {
   item.addEventListener('click', (e) => { handleIndicator(e.target)});
   item.classList.contains('active') && handleIndicator(item);
+});
+
+$(window).resize(function() {
+  console.log("hi");
 });
 
 //horizon scrolling

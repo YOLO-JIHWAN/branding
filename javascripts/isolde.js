@@ -5,13 +5,13 @@ class isolde {
     active        = 'is-active',
     margin        = 20,
     responsive    = {
-      1280: {
+      1440: {
         columns: 4
       },
-      980: {
+      1080: {
         columns: 3
       },
-      480: {
+      720: {
         columns: 2
       },
       0: {
@@ -113,9 +113,9 @@ class isolde {
 
   _setBlocWidth(callback){
     let {parent, elements, margin, responsive} = this
-
+    
     let columns         = this.columns = this._columnsCount(responsive)['columns']
-    let blocWidth       = this.blocWidth = (parent.clientWidth - (margin * (columns - 1))) / columns
+    let blocWidth       = this.blocWidth = (parent.clientWidth - (margin * (columns - (-1)))) / columns
 
     elements.forEach(el=>{
       el.style.width = `${blocWidth}px`
