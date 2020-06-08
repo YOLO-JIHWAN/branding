@@ -89,3 +89,12 @@ $(".profile .nav-tabs .nav-item").on("click", function(){
 });
 
 //Validate
+
+//clipboard(email)
+function copyToEmail(email) {
+  const copyEmail = document.getElementById("copyEmail");
+  copyEmail.select();
+  copyEmail.setSelectionRange(0, 99999); /* For mobile */
+  document.execCommand("copy");
+  alert("복사되었습니다.");
+}
