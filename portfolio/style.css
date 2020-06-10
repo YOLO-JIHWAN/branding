@@ -94,11 +94,13 @@ a {-webkit-tap-highlight-color:transparent}
 #page3 .contents > ul.sns > li:hover {background:rgb(44, 62, 80)}
 #page3 .contents > ul.sns > li > a {position:relative; display:block; text-align:center}
 #page3 .contents > ul.sns > li > a > img {width:100%}
-#page3 .contents > ul.sns > li > a > span {position:absolute; left:50%; bottom:0; padding:5px 7px; border-radius:2px; background:#fff; color:#333; transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55); opacity:0; transform:translate(-50%, 0)}
-#page3 .contents > ul.sns > li > a > span::before {content:""; position:absolute; bottom:-5px; left:50%; width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:5px solid #fff; transform:translate(-50%, 0)}
-#page3 .contents > ul.sns > li:hover span {bottom:45px; opacity:1}
-#page3 .contents > .direct > p {margin-top:10px}
-#page3 .contents > .direct input {box-sizing:border-box; border:none; background:transparent; color:#fff; text-align:left; font-weight:600}
+#page3 .contents > ul.sns > li > a > span {position:absolute; left:50%; bottom:0; padding:5px 7px; border-radius:2px; background:#fff; color:#333; transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55); opacity:0; transform:translate(-50%, 0); z-index:-1;}
+#page3 .contents > ul.sns > li > a > span::before {content:""; position:absolute; bottom:-5px; left:50%; width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:5px solid #fff; transform:translate(-50%, 0); z-index:-1}
+#page3 .contents > ul.sns > li:hover span {bottom:45px; opacity:1; z-index:1}
+#page3 .contents > .direct {padding-top:30px}
+#page3 .contents > .direct > p {margin-top:15px}
+#page3 .contents > .direct strong {font-size:1.35rem}
+#page3 .contents > .direct input {box-sizing:border-box; border:none; background:transparent; color:#fff; text-align:left; font-size:1.2rem; font-weight:400}
 #page3 .contents > .direct button,
 #page3 .contents > .direct a {display:inline-block; padding:0; width:80px; height:30px; border-radius:5px; background:rgb(185, 163, 255); text-align:center; line-height:30px; transition:all .5s linear}
 #page3 .contents > .direct button:active {border:none; outline:none}
@@ -108,15 +110,19 @@ a {-webkit-tap-highlight-color:transparent}
 #page3 .contents > .direct a:hover,
 #page3 .contents > .direct a:active,
 #page3 .contents > .direct a:focus {background:rgb(44, 62, 80)}
-
 /* Mobile */
 @media all and (max-width:720px) {
   #page3 .contents > ul.sns > li {width:30px; height:30px; margin:0}
   #page3 .contents > .direct strong {display:block}
+  #page3 .contents > .direct p:last-child strong {margin-top:15px}
+}
+@media all and (max-width:640px) {
+  #page3 .contents > .direct button,
+  #page3 .contents > .direct a {margin-top:5px}
 }
 
 /* copyright */
 .copyright {position:fixed; bottom:50px; left:110px; width:100%; font-weight:500; text-align:left}
 @media all and (max-width:1080px) {
-  .copyright {left:calc(50% + 20px); width:75%; transform:translateX(-50%); text-align:center}
+  .copyright {left:calc(50% + 20px); width:75%; transform:translateX(-50%); line-height:1.5rem; text-align:center}
 }
