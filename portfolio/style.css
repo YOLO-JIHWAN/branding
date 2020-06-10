@@ -34,52 +34,89 @@ nav {-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; -o-u
   src:local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
-
+html, body {position:relative}
 html, body, .page {width:100%; height:100%; margin:0; padding:0; transition:all .6s cubic-bezier(.5, .2, .2, 1.1); color:#fff; overflow-x:hidden}
+br.next-sentence {display:none}
+@media all and (max-width:1080px) {
+  br.next-sentence {display:block}
+}
+/* iPhone Touch Highlight */
+a {-webkit-tap-highlight-color:transparent}
+
 /* navigation */
-#navigation {position:fixed; top:0; left:0; bottom:0; overflow:hidden; width:60px; height:100%; border-right:1px solid #fff; background:transparent; z-index:99}
-#navigation:hover {width:11%; transition:all .6s cubic-bezier(.5, .2, .2, 1.1); background:rgb(44, 62, 80)} /* #2c3e50 */
+#navigation {position:fixed; top:0; left:0; bottom:0; overflow:hidden; width:50px; height:100%; background:transparent; z-index:99; transition:all .6s cubic-bezier(.5, .2, .2, 1.1);}
+
 .navigation > h1.logo {position:absolute; top:10%; left:0}
 .navigation > h1.logo > a {display:table}
 .navigation > h1.logo > a > * {display:table-cell; vertical-align:middle; text-align:center}
-.navigation > h1.logo > a > img {padding:8px; width:60px}
+.navigation > h1.logo > a > img {padding:8px; width:50px}
 .navigation > h1.logo > a > span {min-width:160px; text-align:left; font-size:1.25rem; font-weight:800}
 .navigation > ul {position:absolute; top:50%; left:0; transform:translate(0, -50%)}
 .navigation > ul > li {display:block; min-width:250px}
 .navigation > ul > li > a {display:table; padding:10px 0; transition:all .5s linear}
 .navigation > ul > li > a > * {display:table-cell; vertical-align:middle; text-align:center; font-size:1.5rem}
-.navigation > ul > li > a > i {width:60px}
+.navigation > ul > li > a > i {width:50px}
 .navigation > ul > li > a > span {min-width:120px; font-weight:700; text-align:left}
-.navigation > ul > li:hover {background:rgb(243, 236, 208)} /* #f3ecd0 */
-.navigation > ul > li:hover > a {color:rgb(44, 62, 80)}
+
+/* Navigation hover Only Pc */
+@media all and (min-width:1080px) {
+  #navigation:hover {width:210px; transition:all .6s cubic-bezier(.5, .2, .2, 1.1); background:rgb(44, 62, 80)} /* #2c3e50 */
+  .navigation > ul > li:hover,
+  .navigation > ul > li:active,
+  .navigation > ul > li:focus {background:rgb(243, 236, 208)} /* #f3ecd0 */
+  .navigation > ul > li:hover > a,
+  .navigation > ul > li:active > a,
+  .navigation > ul > li:focus > a {color:rgb(44, 62, 80)}
+}
 
 /* page */
-.page {position:absolute; padding:3%}
-#page1 {left:0; padding-left:6%; background:rgb(185, 163, 255)} /* #B9A3FF */
+.page {position:absolute; padding:60px}
+#page1 {left:0; padding-left:110px; background:rgb(185, 163, 255)} /* #B9A3FF */
 #page2 {background:rgb(153, 192, 241)} /* #99C0F1 */
 #page3 {background:rgb(153, 241, 158)} /* #99f19e */
 #page2, #page3 {left:200%}
-#target2:target #page2, #target3:target #page3 {transform:translateX(-197%)}
+#target2:target #page2, #target3:target #page3 {transform:translateX(calc(-200% + 50px))}
 #target2:target .navigation, #target3:target .navigation {background:rgb(44, 62, 80)}
 .page .title {font-size:2rem; font-weight:800}
 .page .contents {margin-top:50px}
 
+/* Page for Only Pc */
+@media all and (max-width:1080px) {
+  .page {padding:0 !important}
+  .contents-wrap {position:absolute; top:60px; left:calc(50% + 15px); width:60%; transform:translate(-50%, 0)}
+  .page .contents {margin-top:20px}
+  #target2:target #page2, #target3:target #page3 {transform:translateX(calc(-200%))}
+}
+
 /* contact */
-#page3 > .contents > ul.sns > li {display:inline-block; padding:5px; margin:0 5px; max-width:35px; max-height:35px; border-radius:2px; background:rgb(185, 163, 255); transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55)}
-#page3 > .contents > ul.sns > li:first-child {margin-left:0}
-#page3 > .contents > ul.sns > li:hover {background:rgb(44, 62, 80)}
-#page3 > .contents > ul.sns > li > a {position:relative; display:block; text-align:center}
-#page3 > .contents > ul.sns > li > a > img {width:100%}
-#page3 > .contents > ul.sns > li > a > span {position:absolute; left:50%; bottom:0; padding:5px 7px; border-radius:2px; background:#fff; color:#333; transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55); opacity:0; transform:translate(-50%, 0)}
-#page3 > .contents > ul.sns > li > a > span::before {content:""; position:absolute; bottom:-5px; left:50%; width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:5px solid #fff; transform:translate(-50%, 0)}
-#page3 > .contents > ul.sns > li > a:hover span {bottom:45px; opacity:1}
-#page3 > .contents > .direct > p {margin-top:10px}
-#page3 > .contents > .direct input {padding:5px 10px; min-width:200px; border:none; background:transparent; color:#fff; text-align:left; font-weight:600}
-#page3 > .contents > .direct button,
-#page3 > .contents > .direct a {display:inline-block; padding:0; width:80px; height:30px; border-radius:5px; background:rgb(185, 163, 255); text-align:center; line-height:30px; transition:all .5s linear}
-#page3 > .contents > .direct button:active {border:none; outline:none}
-#page3 > .contents > .direct button:hover,
-#page3 > .contents > .direct a:hover {background:rgb(44, 62, 80)}
+#page3 .contents > ul.sns > li {display:inline-block; padding:5px; margin:0 5px; max-width:35px; max-height:35px; border-radius:2px; background:rgb(185, 163, 255); transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55)}
+#page3 .contents > ul.sns > li:first-child {margin-left:0}
+#page3 .contents > ul.sns > li:hover {background:rgb(44, 62, 80)}
+#page3 .contents > ul.sns > li > a {position:relative; display:block; text-align:center}
+#page3 .contents > ul.sns > li > a > img {width:100%}
+#page3 .contents > ul.sns > li > a > span {position:absolute; left:50%; bottom:0; padding:5px 7px; border-radius:2px; background:#fff; color:#333; transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55); opacity:0; transform:translate(-50%, 0)}
+#page3 .contents > ul.sns > li > a > span::before {content:""; position:absolute; bottom:-5px; left:50%; width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:5px solid #fff; transform:translate(-50%, 0)}
+#page3 .contents > ul.sns > li:hover span {bottom:45px; opacity:1}
+#page3 .contents > .direct > p {margin-top:10px}
+#page3 .contents > .direct input {box-sizing:border-box; border:none; background:transparent; color:#fff; text-align:left; font-weight:600}
+#page3 .contents > .direct button,
+#page3 .contents > .direct a {display:inline-block; padding:0; width:80px; height:30px; border-radius:5px; background:rgb(185, 163, 255); text-align:center; line-height:30px; transition:all .5s linear}
+#page3 .contents > .direct button:active {border:none; outline:none}
+#page3 .contents > .direct button:hover,
+#page3 .contents > .direct button:active,
+#page3 .contents > .direct button:focus,
+#page3 .contents > .direct a:hover,
+#page3 .contents > .direct a:active,
+#page3 .contents > .direct a:focus {background:rgb(44, 62, 80)}
+
+/* Mobile */
+@media all and (max-width:720px) {
+  #page3 .contents > ul.sns > li {width:30px; height:30px; margin:0}
+  #page3 .contents > .direct strong {display:block}
+}
 
 /* copyright */
-.copyright {position:fixed; bottom:50px; left:6%; font-weight:500}
+.copyright {position:fixed; bottom:50px; left:110px; width:100%; font-weight:500; text-align:left}
+@media all and (max-width:1080px) {
+  .copyright {left:calc(50% + 20px); width:75%; transform:translateX(-50%); text-align:center}
+}

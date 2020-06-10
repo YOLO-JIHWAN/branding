@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
 	<link rel="stylesheet" href="../css/isolde.css">
@@ -42,80 +42,85 @@
 					</ul>
 				</nav>
 				<div class="page" id="page1">
-					<h2 class="title">
-						WORK
-						<i class="fa fa-keyboard-o"></i>
-					</h2>
-					<div class="contents">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore rerum adipisci eos inventore, excepturi itaque ratione dignissimos perspiciatis in. Pariatur itaque quaerat minus nisi fuga tempore autem non vero beatae?
+					<div class="contents-wrap">
+						<h2 class="title">
+							WORK
+							<i class="fa fa-keyboard-o"></i>
+						</h2>
+						<div class="contents">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore rerum adipisci eos inventore, excepturi itaque ratione dignissimos perspiciatis in. Pariatur itaque quaerat minus nisi fuga tempore autem non vero beatae?
+						</div>
 					</div>
 				</div>
 				<div class="page" id="page2">
-					<h2 class="title">
-						ABOUT
-						<i class="fa fa-bolt"></i>
-					</h2>
-					<div class="contents">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus totam esse distinctio possimus dolores magnam optio quibusdam reprehenderit quos fugit illum sint eos quam dolorum, ab blanditiis. Iste, quae rem?
+					<div class="contents-wrap">
+						<h2 class="title">
+							ABOUT
+							<i class="fa fa-bolt"></i>
+						</h2>
+						<div class="contents">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus totam esse distinctio possimus dolores magnam optio quibusdam reprehenderit quos fugit illum sint eos quam dolorum, ab blanditiis. Iste, quae rem?
+						</div>
 					</div>
 				</div>
 				<div class="page" id="page3">
-					<h2 class="title">
-						CONTACT
-						<i class="fa fa-plus-circle"></i>
-					</h2>
-					<div class="contents">
-						<ul class="sns">
-							<li>
-								<a href="https://github.com/YOLO-JIHWAN/branding" target="_blank">
-									<img src="https://yolo-jihwan.github.io/branding/img/github.svg" alt="github">
-									<span>Github</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://codepen.io/YOLO-JIHWAN">
-									<img src="https://yolo-jihwan.github.io/branding/img/codepen.svg" alt="codepen">
-									<span>Codepen</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://open.kakao.com/o/sfkcv0Bb">
-									<img src="https://yolo-jihwan.github.io/branding/img/kakao.svg" alt="kakao">
-									<span>Kakao</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://yolo-jihwan.tistory.com/">
-									<img src="https://yolo-jihwan.github.io/branding/img/tistory.svg" alt="tistory">
-									<span>Tistory</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://www.instagram.com/leezakaya_/?hl=ko">
-									<img src="https://yolo-jihwan.github.io/branding/img/instagram.svg" alt="instagram">
-									<span>Instagram</span>
-								</a>
-							</li>
-						</ul>
-						<div class="direct">
-							<p>
-								<strong class="sort">E-mail</strong>
-								<input type="text" value="yolo.jihwan@kakao.com" id="copyEmail" readonly onfocus="this.blur()">
-								<button type="button" onclick="copyToEmail()">복사하기</button>
-							</p>
-							<p>
-								<strong class="sort">Phone</strong>
-								<input type="text" value="+82 10-2546-8095" id="copyPhone" readonly onfocus="this.blur()">
-								<a href="tel:+8210-2546-8095" class="call">전화걸기</a>
-							</p>
+					<div class="contents-wrap">
+						<h2 class="title">
+							CONTACT
+							<i class="fa fa-plus-circle"></i>
+						</h2>
+						<div class="contents">
+							<ul class="sns">
+								<li>
+									<a href="https://github.com/YOLO-JIHWAN/branding" target="_blank">
+										<img src="https://yolo-jihwan.github.io/branding/img/github.svg" alt="github">
+										<span>Github</span>
+									</a>
+								</li>
+								<li>
+									<a href="https://codepen.io/YOLO-JIHWAN">
+										<img src="https://yolo-jihwan.github.io/branding/img/codepen.svg" alt="codepen">
+										<span>Codepen</span>
+									</a>
+								</li>
+								<li>
+									<a href="https://open.kakao.com/o/sfkcv0Bb">
+										<img src="https://yolo-jihwan.github.io/branding/img/kakao.svg" alt="kakao">
+										<span>Kakao</span>
+									</a>
+								</li>
+								<li>
+									<a href="https://yolo-jihwan.tistory.com/">
+										<img src="https://yolo-jihwan.github.io/branding/img/tistory.svg" alt="tistory">
+										<span>Tistory</span>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/leezakaya_/?hl=ko">
+										<img src="https://yolo-jihwan.github.io/branding/img/instagram.svg" alt="instagram">
+										<span>Instagram</span>
+									</a>
+								</li>
+							</ul>
+							<div class="direct">
+								<p>
+									<strong class="sort">E-mail</strong>
+									<input type="text" value="yolo.jihwan@kakao.com" id="copyEmail" readonly onfocus="this.blur()">
+									<button type="button" onclick="copyToEmail()">복사하기</button>
+								</p>
+								<p>
+									<strong class="sort">Phone</strong>
+									<input type="text" value="+82 10-2546-8095" id="copyPhone" readonly onfocus="this.blur()">
+									<a href="tel:+8210-2546-8095" class="call">전화걸기</a>
+								</p>
+							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<p class="copyright">Copyright 2020. YOLO JIHWAN. All rights reserved.</p>
+	<p class="copyright">Copyright 2020. YOLO JIHWAN. <br class="next-sentence"> All rights reserved.</p>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="./js/common.js"></script>
 	<script type="module">
