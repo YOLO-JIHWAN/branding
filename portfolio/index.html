@@ -48,12 +48,87 @@
 							<i class="fa fa-keyboard-o"></i>
 						</h2>
 						<p></p>
-						<div class="contents">
+						<div class="contents sortable">
+							<div class="wrapper">
+								<nav class="sort">
+									<div class="active-bg"></div>
+									<ul class="list">
+										<li class="active" data-isolde-link="all">
+											<img src="/img/globe.svg" alt="ico-all">
+											<span>ALL</span>
+										</li>
+										<li class="" data-isolde-link="pc">
+											<img src="/img/pc.svg" alt="ico-pc">
+											<span>PC</span>
+										</li>
+										<li data-isolde-link="mobile">
+											<img src="/img/mobile.svg" alt="ico-mobile">
+											<span>MOB</span>
+										</li>
+										<li data-isolde-link="js">
+											<img src="/img/javascript.svg" alt="ico-js">
+											<span>JS</span>
+										</li>
+										<li data-isolde-link="etc">
+											<img src="/img/etc.svg" alt="ico-etc">
+											<span>ETC</span>
+										</li>
+									</ul>
+								</nav>
+								<div id="isolde" class="isolde-default">
+									<div data-isode-el="pc">
+										<div class="isolde__item">
+											<img src="/portfolio/images/pj_javascript01.jpg" alt="" class="item__picutre">
+											<div class="item__infos">
+												<h2 class="item__title">TITLE</h2>
+												<p class="item__text">Contents</p>
+											</div>
+										</div>
+									</div>
+									<div data-isode-el="pc">
+										<div class="isolde__item">
+											<img src="/portfolio/images/pj_javascript01.jpg" alt="" class="item__picutre">
+											<div class="item__infos">
+												<h2 class="item__title">TITLE</h2>
+												<p class="item__text">Contents</p>
+											</div>
+										</div>
+									</div>
+									<div data-isode-el="pc">
+										<div class="isolde__item">
+											<img src="/portfolio/images/pj_javascript01.jpg" alt="" class="item__picutre">
+											<div class="item__infos">
+												<h2 class="item__title">TITLE</h2>
+												<p class="item__text">Contents</p>
+											</div>
+										</div>
+									</div>
+									<div data-isode-el="pc">
+										<div class="isolde__item">
+											<img src="/portfolio/images/pj_javascript01.jpg" alt="" class="item__picutre">
+											<div class="item__infos">
+												<h2 class="item__title">TITLE</h2>
+												<p class="item__text">Contents</p>
+											</div>
+										</div>
+									</div>
+									<div data-isode-el="pc">
+										<div class="isolde__item">
+											<img src="/portfolio/images/pj_javascript01.jpg" alt="" class="item__picutre">
+											<div class="item__infos">
+												<h2 class="item__title">TITLE</h2>
+												<p class="item__text">Contents</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--
 							<div class="wrapper">
 								<nav class="sortable">
-									<ul class="sortable__nav nav">
+									<ul class="nav">
 										<li>
-											<img src="/img/world.svg" alt="ico-all">
+											<img src="/img/globe.svg" alt="ico-all">
 											<span class="label" data-flip-key="item-1-label">ALL</span>
 											<span class="background" data-flip-key="background"></span>
 										</li>
@@ -63,28 +138,30 @@
 											<span class="background" data-flip-key="background"></span>
 										</li>
 										<li>
-											<img src="" alt="">
+											<img src="/img/mobile.svg" alt="ico-mobile">
 											<span class="label" data-flip-key="item-1-label">MOBILE</span>
 											<span class="background" data-flip-key="background"></span>
 										</li>
 										<li>
-											<i class="fa fa-phone-laptop"></i>
-											<span class="label" data-flip-key="item-1-label">RWD</span>
+											<img src="/img/responsive.svg" alt="ico-rwd">
+											<span class="label" data-flip-key="item-1-label">RESPONSIVE</span>
 											<span class="background" data-flip-key="background"></span>
 										</li>
 										<li>
-											<i class="fa fa-code"></i>
+											<img src="/img/javascript.svg" alt="ico-js">
 											<span class="label" data-flip-key="item-1-label">JAVASCRIPT</span>
 											<span class="background" data-flip-key="background"></span>
 										</li>
 										<li>
-											<i class="fa fa-globe"></i>
+											<img src="/img/etc.svg" alt="ico-etc">
 											<span class="label" data-flip-key="item-1-label">ETC</span>
 											<span class="background" data-flip-key="background"></span>
 										</li>
 									</ul>
+									<div class="bg" data-flip-key="bg"></div>
 								</nav>
 							</div>
+							-->
 						</div>
 					</div>
 				</div>
@@ -241,7 +318,7 @@
 								<p>
 									<strong class="sort">E-mail</strong>
 									<input type="text" value="yolo.jihwan@kakao.com" id="copyEmail" readonly onfocus="this.blur()">
-									<button type="button" onclick="copyToEmail()">복사하기</button>
+									<button type="button" class="copy-email">복사하기</button>
 								</p>
 								<p>
 									<strong class="sort">Phone</strong>
@@ -257,7 +334,9 @@
 	</div>
 	<p class="copyright">Copyright 2020. YOLO JIHWAN. <br class="next-sentence"> All rights reserved.</p>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="./js/common.js"></script>
+	<script src="/portfolio/js/vanilla.js"></script>
+	<script src="/portfolio/js/plug-in-jqeury.js"></script>
+	<!-- <script src="./js/common.js"></script> -->
 	<script type="module">
 		import isolde from '../javascripts/isolde.js';
 		const isoldejs = new isolde();

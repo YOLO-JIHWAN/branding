@@ -1,3 +1,4 @@
+//////////Only javascript
 //filter lnb
 const indicator = document.querySelector('.link-indicator');
 const items = document.querySelectorAll('.nav__link');
@@ -20,10 +21,7 @@ items.forEach((item, index) => {
   item.addEventListener('click', (e) => { handleIndicator(e.target)});
   item.classList.contains('active') && handleIndicator(item);
 });
-
-$(window).resize(function() {
-  console.log("hi");
-});
+/////////////Use jQuery
 
 //horizon scrolling
 $(window).scroll(function(){
@@ -90,11 +88,24 @@ $(".profile .nav-tabs .nav-item").on("click", function(){
 
 //Validate
 
-//clipboard(email)
-function copyToEmail(email) {
-  const copyEmail = document.getElementById("copyEmail");
-  copyEmail.select();
-  copyEmail.setSelectionRange(0, 99999); /* For mobile */
-  document.execCommand("copy");
-  alert("복사되었습니다.");
-}
+// //device
+// function isMobile() {
+//   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+// }
+// const navigationId = document.getElementById("navigation");
+// if(isMobile()) {
+//   //Mobile
+// } else {
+//   //Not Mobile
+//   console.log("hi");
+//   navigationId.addEventListener("mouseover", naviMouseOver);
+//   navigationId.addEventListener("mouseout", naviMouseOut);
+// }
+
+// function naviMouseOver() {
+//   navigationId.classList.add("hover");
+// }
+// function naviMouseOut() {
+//   navigationId.classList.remove("hover");
+// }
+
