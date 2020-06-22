@@ -12,10 +12,8 @@ sortNavItems.click(function(){
     sortNavItems.removeClass("active");
     $(this).addClass("active");
     const itemIndex = $(this).index();
-    console.log(itemIndex);
     const changeWidth = $("#page1 .sort li.active").outerWidth();
     $("#page1 .sort .active-bg").css("width", changeWidth);
-    // $("#page1 .sort .active-bg").css("transform", "translateX(100px)");
     if(itemIndex == 1) {
         $("#page1 .sort .active-bg").css("transform", "translate(42px, -50%)");
     } else if(itemIndex == 2) {
