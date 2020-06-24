@@ -3,6 +3,18 @@ $(window).scroll(function(){
     $("").css("width", scrollPercent + "%");
 });
 
+//language mode
+const langMode = $(".toggle-wrap.lang input");
+langMode.click(function(){
+    if($(this).is(":checked") == true) {
+        $("#page2 .parts .details .kor").css("display","none");
+        $("#page2 .parts .details .eng").css("display","inline-block");
+    } else {
+        $("#page2 .parts .details .eng").css("display","none");
+        $("#page2 .parts .details .kor").css("display","inline-block");
+    }
+});
+
 //sort menu
 const sortNav = $("#page1 .sort");
 const sortNavItems = $("#page1 .sort li");

@@ -44,6 +44,12 @@
 								</a>
 							</li>
 						</ul>
+						<div class="toggle-wrap mode">
+							<input type="checkbox" id="modeToggle">
+							<label for="modeToggle" class="toggle">
+								<div class="circle"></div>
+							</label>
+						</div>
 					</nav>
 					<div class="page" id="page1">
 						<div class="contents-wrap">
@@ -81,7 +87,7 @@
 									</nav>
 									<div id="isolde" class="isolde-default">
 										<div data-isolde-el="js">
-											<a href="https://yolo-jihwan.github.io/branding/portfolio/project-list/javascript/custom-web-home/index.html"
+											<a href="../portfolio/project-list/javascript/custom-web-home/index.html"
 												class="isolde__item"
 												target="_blank">
 												<img
@@ -92,6 +98,36 @@
 													<h2 class="item__title" data-text="Custom Web Home">Custom Web Home</h2>
 													<h3 class="item__sort">JAVASCRIPT</h3>
 													<p class="item__text">Custom my Website Home For PC, Use Vanilla javascript</p>
+												</div>
+											</a>
+										</div>
+										<div data-isolde-el="etc">
+											<a href="../portfolio/project-list/etc/painting/painting01.jpg"
+												class="isolde__item"
+												target="_blank">
+												<img
+													src="../portfolio/images/pj-painting01.jpg"
+													alt="Painting01"
+													class="item__picture">
+												<div class="item__infos">
+													<h2 class="item__title" data-text="iPad Pro Painting 01">iPad Pro Painting 01</h2>
+													<h3 class="item__sort">ETC</h3>
+													<p class="item__text">Dad and Two Son</p>
+												</div>
+											</a>
+										</div>
+										<div data-isolde-el="etc">
+											<a href="../portfolio/project-list/etc/painting/painting02.jpg"
+												class="isolde__item"
+												target="_blank">
+												<img
+													src="../portfolio/images/pj-painting02.jpg"
+													alt="Painting01"
+													class="item__picture">
+												<div class="item__infos">
+													<h2 class="item__title" data-text="iPad Pro Painting 02">iPad Pro Painting 02</h2>
+													<h3 class="item__sort">ETC</h3>
+													<p class="item__text">Yongmasan summit</p>
 												</div>
 											</a>
 										</div>
@@ -109,20 +145,25 @@
 								ABOUT
 								<i class="fa fa-bolt"></i>
 							</h2>
-							<div class="toggle">
-								<input type="checkbox" id="languageToggle">
-								<label for="languageToggle" class="toggle-item">
-									<div class="check"></div>
-								</label>
+							<div class="clear">
+								<div class="toggle-wrap lang">
+									<input type="checkbox" id="langToggle">
+									<label for="langToggle" class="toggle">
+										<div class="circle"></div>
+									</label>
+								</div>
 							</div>
 							<div class="contents">
 								<section class="parts personal">
-									<h3>JIHWAN LEE</h3>
+									<h3>
+										JIHWAN LEE
+										<img src="../img/list-style.png" alt="ico-name" class="ico-name">
+									</h3>
 									<ul class="details">
 										<li>1989.08.22</li>
 										<li>
-											South Korea, Seoul
-											<span class="reference">대한민국, 서울</span>
+											<span class="eng">South Korea, Seoul</span>
+											<span class="kor">대한민국, 서울</span>
 										</li>
 										<li>+82 10-2546-8095</li>
 										<li>yolo.jihwan@kakao.com</li>
@@ -132,19 +173,25 @@
 									<h3>EDUCATION</h3>
 									<ul class="details">
 										<li>
-											<span class="date">2015. 02</span>
-											<span class="eng">Graduated from Dongmyeong University's Department of Journalism and Broadcasting</span>
-											<span class="kor">동명대학교 신문방송학과 졸업</span>
+											<dl>
+												<dt class="date">2015. 02</dt>
+												<dd class="eng">Graduated from Dongmyeong University's Department of Journalism and Broadcasting</dd>
+												<dd class="kor">동명대학교 신문방송학과 졸업</dd>
+											</dl>
 										</li>
 										<li>
-											<span class="date">2016. 06</span>
-											<span class="eng">Product Designer Specialist Training Completion</span>
-											<span class="kor">제품디자이너 전문가 양성 수료</span>
+											<dl>
+												<dt class="date">2016. 06</dt>
+												<dd class="eng">Product Designer Specialist Training Completion</dd>
+												<dd class="kor">제품디자이너 전문가 양성 수료</dd>
+											</dl>
 										</li>
 										<li>
-											<span class="date">2017. 12</span>
-											<span class="eng">SBS Academy Web Publishing Training Completion</span>
-											<span class="kor">SBS 아카데미 웹퍼블리싱 교육 수료</span>
+											<dl>
+												<dt class="date">2017. 12</dt>
+												<dd class="eng">SBS Academy Web Publishing Training Completion</dd>
+												<dd class="kor">SBS 아카데미 웹퍼블리싱 교육 수료</dd>
+											</dl>
 										</li>
 									</ul>
 								</section>
@@ -186,16 +233,70 @@
 									<h3>CAREER</h3>
 									<ul class="details">
 										<li>
-											<span class="date">2018. 09</span>
-											<span class="eng">Flasystem IT Department Join (Web Publisher)</span>
-											<span class="kor">플라시스템 IT개발부 입사 (웹퍼블리셔)</span>
+											<dl>
+												<dt class="date">
+													2018. 09
+													<div>
+														<span class="eng">~ Current</span>
+														<span class="kor">~ 현재</span>
+													</div>
+												</dt>
+												<dd class="eng">Flasystem IT Department Join (Web Publisher)</dd>
+												<dd class="kor">플라시스템 IT개발부 입사 (웹퍼블리셔)</dd>
+											</dl>
 										</li>
 									</ul>
 								</section>
 								<section class="parts skill">
 									<h3>SKILL</h3>
 									<ul class="details">
-										<li></li>
+										<li>
+											<dl>
+												<dt>Awesome</dt>
+												<dd>
+													<span class="eng">HTML5 Mark Up</span>
+													<span class="kor">HTML5 마크업</span>
+												</dd>
+												<dt class="ir">Blank Space</dt>
+												<dd>
+													<span class="eng">CSS3 Use</span>
+													<span class="kor">CSS3 활용</span>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt>Normal</dt>
+												<dd>
+													<span class="eng">jQuery Plug-in Use</span>
+													<span class="kor">jQuery 플러그인 활용</span>
+												</dd>
+												<dt class="ir">Blank Space</dt>
+												<dd>
+													<span class="eng">Edit Video</span>
+													<span class="kor">동영상 편집</span>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt>Slow</dt>
+												<dd>
+													<span class="eng">javascript Grammar Use</span>
+													<span class="kor">자바스크립트 문법 활용</span>
+												</dd>
+												<dt class="ir">Blank Space</dt>
+												<dd>
+													<span class="eng">Use Photoshop</span>
+													<span class="kor">포토샵</span>
+												</dd>
+												<dt class="ir">Blank Space</dt>
+												<dd>
+													<span class="eng">Use Illustration</span>
+													<span class="kor">일러스트</span>
+												</dd>
+											</dl>
+										</li>
 									</ul>
 								</section>
 							</div>

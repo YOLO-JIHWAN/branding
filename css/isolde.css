@@ -126,3 +126,15 @@
   left: 0;
   transition: transform .2s ease-out;
 }
+
+@media all and (max-width:480px) {
+  .item__title {font-size:1rem}
+  .item__sort {font-size:.75rem}
+  .item__text {font-size:.65rem}
+}
+
+@media all and (max-width:350px) {
+  .item__title {font-size:0.75rem}
+  .item__sort {font-size:.65rem}
+  .item__text {font-size:.55rem}
+}
