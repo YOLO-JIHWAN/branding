@@ -2,13 +2,9 @@
 <html lang="ko">
 	<head>
 		<meta charset="UTF-8">
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
 		<link rel="stylesheet" href="../css/isolde.css">
 		<link rel="stylesheet" href="style.css">
 		<title>YOLO JIHWAN Portfolio</title>
@@ -67,17 +63,13 @@
 												<img src="../img/globe.svg" alt="ico-all">
 												<span>ALL</span>
 											</li>
-											<li class="" data-isolde-link="pc">
-												<img src="../img/pc.svg" alt="ico-pc">
-												<span>PC</span>
+											<li data-isolde-link="plan">
+												<img src="../img/sketch.svg" alt="ico-plan">
+												<span>PLAN</span>
 											</li>
-											<li data-isolde-link="mobile">
-												<img src="../img/mobile.svg" alt="ico-mobile">
-												<span>MOB</span>
-											</li>
-											<li data-isolde-link="js">
-												<img src="../img/javascript.svg" alt="ico-js">
-												<span>JS</span>
+											<li class="" data-isolde-link="it">
+												<img src="../img/tablet.svg" alt="ico-it">
+												<span>IT</span>
 											</li>
 											<li data-isolde-link="etc">
 												<img src="../img/etc.svg" alt="ico-etc">
@@ -86,14 +78,11 @@
 										</ul>
 									</nav>
 									<div id="isolde" class="isolde-default">
-										<div data-isolde-el="js">
+										<div data-isolde-el="it">
 											<a href="../portfolio/project-list/javascript/custom-web-home/index.html"
 												class="isolde__item"
 												target="_blank">
-												<img
-													src="../portfolio/images/pj_javascript01.jpg"
-													alt="Custom Web Home"
-													class="item__picture">
+												<img src="../portfolio/images/pj_javascript01.jpg" alt="Custom Web Home" class="item__picture">
 												<div class="item__infos">
 													<h2 class="item__title" data-text="Custom Web Home">Custom Web Home</h2>
 													<h3 class="item__sort">JAVASCRIPT</h3>
@@ -101,14 +90,19 @@
 												</div>
 											</a>
 										</div>
+										<div data-isolde-el="plan">
+											<a href="../portfolio/document/Samsung-Planning.pdf" class="isolde__item" target="_blank">
+												<img src="../portfolio/images/pj-campus.jpg" alt="Painting01" class="item__picture">
+												<div class="item__infos">
+													<h2 class="item__title" data-text="Samsung Galaxy Tab S">Samsung Galaxy Tab S</h2>
+													<h3 class="item__sort">PLANNING</h3>
+													<p class="item__text">Samsung Galaxy TabS Campus Creator Planning paper</p>
+												</div>
+											</a>
+										</div>
 										<div data-isolde-el="etc">
-											<a href="../portfolio/project-list/etc/painting/painting01.jpg"
-												class="isolde__item"
-												target="_blank">
-												<img
-													src="../portfolio/images/pj-painting01.jpg"
-													alt="Painting01"
-													class="item__picture">
+											<a href="../portfolio/project-list/etc/painting/painting01.jpg" class="isolde__item" target="_blank">
+												<img src="../portfolio/images/pj-painting01.jpg" alt="Painting01" class="item__picture">
 												<div class="item__infos">
 													<h2 class="item__title" data-text="iPad Pro Painting 01">iPad Pro Painting 01</h2>
 													<h3 class="item__sort">ETC</h3>
@@ -117,17 +111,22 @@
 											</a>
 										</div>
 										<div data-isolde-el="etc">
-											<a href="../portfolio/project-list/etc/painting/painting02.jpg"
-												class="isolde__item"
-												target="_blank">
-												<img
-													src="../portfolio/images/pj-painting02.jpg"
-													alt="Painting01"
-													class="item__picture">
+											<a href="../portfolio/project-list/etc/painting/painting02.jpg" class="isolde__item" target="_blank">
+												<img src="../portfolio/images/pj-painting02.jpg" alt="Painting01" class="item__picture">
 												<div class="item__infos">
 													<h2 class="item__title" data-text="iPad Pro Painting 02">iPad Pro Painting 02</h2>
 													<h3 class="item__sort">ETC</h3>
 													<p class="item__text">Yongmasan summit</p>
+												</div>
+											</a>
+										</div>
+										<div data-isolde-el="it">
+											<a href="#" class="isolde__item">
+												<img src="../portfolio/images/pj-intranet.jpg" alt="flasystem intranet" class="item__picture">
+												<div class="item__infos">
+													<h2 class="item__title" data-text="Flower Intranet">Flower Intranet</h2>
+													<h3 class="item__sort">PUBLISHING</h3>
+													<p class="item__text">Flower Company Intranet</p>
 												</div>
 											</a>
 										</div>
@@ -146,6 +145,10 @@
 								<i class="fa fa-bolt"></i>
 							</h2>
 							<div class="clear">
+								<div class="signature">
+									<p class="eng">I prefer simplicity in everything.</p>
+									<p class="kor">모든 것에 있어서 간단함을 선호합니다.</p>
+								</div>
 								<div class="toggle-wrap lang">
 									<input type="checkbox" id="langToggle">
 									<label for="langToggle" class="toggle">
@@ -172,6 +175,23 @@
 								<section class="parts education">
 									<h3>EDUCATION</h3>
 									<ul class="details">
+										<li>
+											<dl>
+												<dt class="date">2014. 06</dt>
+												<dd class="eng">
+													Apple Authorized Training Final Cut Pro X & Motion5 Level1
+													<a href="../portfolio/document/apple.pdf" target="_blank" class="award-img">
+														<i class="fa fa-paperclip"></i>
+													</a>
+												</dd>
+												<dd class="kor">
+													애플 파이널 컷 프로 X, 모션5 레벨1 수료
+													<a href="../portfolio/document/apple.pdf" target="_blank" class="award-img">
+														<i class="fa fa-paperclip"></i>
+													</a>
+												</dd>
+											</dl>
+										</li>
 										<li>
 											<dl>
 												<dt class="date">2015. 02</dt>
@@ -220,10 +240,16 @@
 										<li>
 											<span class="eng">Samsung Electronics Galaxy Tab Campus Creator Grand Prize</span>
 											<span class="kor">삼성전자 갤럭시탭 캠퍼스 크리에이터 최우수상</span>
+											<a href="../portfolio/document/SamsungGalaxy.pdf" target="_blank" class="award-img">
+												<i class="fa fa-paperclip"></i>
+											</a>
 										</li>
 										<li>
 											<span class="eng">Busan, Ulsan, Gyeongnam Viewer's Participation Broadcasting Grand Prize</span>
 											<span class="kor">부울경 시청자 참여방송 대상</span>
+											<a href="../portfolio/document/Artroad.pdf" target="_blank" class="award-img">
+												<i class="fa fa-paperclip"></i>
+											</a>
 										</li>
 									</ul>
 								</section>
@@ -251,6 +277,8 @@
 									<h3>SKILL</h3>
 									<ul class="details">
 										<li>
+											<img src="../portfolio/images/producer.svg" alt="">
+											<img src="../portfolio/images/html.svg" alt="">
 											<dl>
 												<dt>Awesome</dt>
 												<dd>
@@ -357,22 +385,12 @@
 								<div class="direct">
 									<p>
 										<strong class="sort">E-mail</strong>
-										<input
-											type="text"
-											value="yolo.jihwan@kakao.com"
-											id="copyEmail"
-											readonly="readonly"
-											onfocus="this.blur()">
+										<input type="text" value="yolo.jihwan@kakao.com" id="copyEmail" readonly="readonly" onfocus="this.blur()">
 										<button type="button" class="copy-email">복사하기</button>
 									</p>
 									<p>
 										<strong class="sort">Phone</strong>
-										<input
-											type="text"
-											value="+82 10-2546-8095"
-											id="copyPhone"
-											readonly="readonly"
-											onfocus="this.blur()">
+										<input type="text" value="+82 10-2546-8095" id="copyPhone" readonly="readonly" onfocus="this.blur()">
 										<a href="tel:+8210-2546-8095" class="call">전화걸기</a>
 									</p>
 								</div>
@@ -387,13 +405,9 @@
 			<br class="next-sentence">
 			All rights reserved.</p>
 			-->
-		<script
-			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="js/vanilla.js"></script>
 		<script src="js/plug-in-jqeury.js"></script>
-		<!-- <script src="./js/common.js"></script> -->
 		<script type="module">
 			import isolde from '../javascripts/isolde.js';
 			const isoldejs = new isolde();

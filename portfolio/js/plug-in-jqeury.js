@@ -7,11 +7,11 @@ $(window).scroll(function(){
 const langMode = $(".toggle-wrap.lang input");
 langMode.click(function(){
     if($(this).is(":checked") == true) {
-        $("#page2 .parts .details .kor").css("display","none");
-        $("#page2 .parts .details .eng").css("display","inline-block");
+        $("#page2 .parts .details .kor, #page2 .signature .kor").css("display","none");
+        $("#page2 .parts .details .eng, #page2 .signature .eng").css("display","inline-block");
     } else {
-        $("#page2 .parts .details .eng").css("display","none");
-        $("#page2 .parts .details .kor").css("display","inline-block");
+        $("#page2 .parts .details .eng, #page2 .signature .eng").css("display","none");
+        $("#page2 .parts .details .kor, #page2 .signature .kor").css("display","inline-block");
     }
 });
 

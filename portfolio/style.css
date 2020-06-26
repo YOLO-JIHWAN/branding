@@ -20,15 +20,7 @@ form legend {display:none}
 .scroll-top {position:fixed; right:30px; bottom:30px; display:none}
 .scroll-top button {width:20px; height:20px; border:1px solid #121214; border-width:1px 1px 0 0; transform:rotate(-45deg); outline:0; transition:.5s}
 .scroll-top:hover button {transform:rotate(315deg)}
-/*
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
-.main-menu li > a {position:relative; display:table; border-collapse:collapse; border-spacing:0; color:#fff; font-family:arial; font-size:14px; text-decoration:none; -webkit-transform:translateZ(0) scale(1,1); -webkit-transition:all .1s linear; transition:all .1s linear}
-
-nav {-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; -o-user-select:none; user-select:none}
-
-*/
 @font-face {
   font-family:'Titillium Web';
   font-style:normal;
@@ -59,7 +51,7 @@ a {-webkit-tap-highlight-color:transparent}
 .navigation > ul > li > a > * {display:table-cell; vertical-align:middle; text-align:center; font-size:1.5rem}
 .navigation > ul > li > a > i {width:50px}
 .navigation > ul > li > a > span {min-width:120px; font-weight:700; text-align:left}
-.navigation .toggle-wrap.mode {position:absolute; left:50%; bottom:50px; transform:translate(-50%,0)}
+.navigation .toggle-wrap.mode {position:absolute; left:50%; bottom:50px; transform:translate(-50%,0); cursor:pointer}
 .navigation .toggle-wrap.mode input {display:none}
 .navigation .toggle-wrap.mode label.toggle {display:block; width:35px; height:35px; background:#fff; border-radius:50%; transition:all .4s ease-out}
 .navigation .toggle-wrap.mode .toggle .circle {position:absolute; top:50%; left:50%; width:18px; height:18px; transform:translate(-50%, -50%); background:RGB(69,177,254); border-radius:50%}/*#45b1fe*/
@@ -112,13 +104,17 @@ a {-webkit-tap-highlight-color:transparent}
 
 /*** about ***/
 #page2 .contents {display:flex; flex-direction:row; flex-flow:wrap; position:relative}
-#page2 section.parts {flex-basis:45%}
+#page2 section.parts {flex-basis:45%;}
+#page2 .signature {float:left}
+#page2 .signature .eng, #page2 .signature .kor {font-size:1.5rem; transition:all .5s ease-out}
+#page2 .signature .eng {display:none}
 #page2 .parts h3 {margin:30px 0 10px 0; font-weight:600; font-size:1.35rem}
 #page2 .parts h3 img.ico-name {vertical-align:middle}
 #page2 .parts ul.details {margin-top:1%}
 #page2 .parts li dl {margin:0}
 #page2 .parts li dl:after {content:""; display:block; clear:both}
-#page2 .parts li dl dt {float:left; width:80px}
+#page2 .parts li dl dt {float:left}
+#page2 .parts li dl dt {width:80px; font-weight:600}
 #page2 .parts li dl dd {width:80%}
 #page2 .parts .details li {position:relative; line-height:1.5rem}
 #page2 .parts .details .date {display:inline-block; width:80px}
@@ -129,12 +125,19 @@ a {-webkit-tap-highlight-color:transparent}
 #page2 .toggle-wrap .circle {position:absolute; top:3px; left:3px; width:25px; height:25px; border-radius:50%; background-image:url("../img/korea.svg"); transition:all .3s ease-out}
 #page2 #langToggle {display:none}
 #page2 #langToggle:checked + label .circle {left:32px; transform:rotate(360deg); background-image:url("../img/america.svg")}
-@media all and (max-width:720px) {
-  #page2 .parts .details span.date {display:block}
-  #page2 .parts li dl dd {width:100%}
-}
 @media all and (max-width:1080px) {
   #page2 section.parts {flex-basis:100%}
+  #page2 .toggle-wrap {padding-right:50px}
+}
+@media all and (max-width:720px) {
+  #page2 .parts .details span.date {display:block}
+  #page2 .parts li dl dt {margin-top:10px}
+  #page2 .parts li dl dt.ir {display:none}
+  #page2 .parts li dl dd {width:100%}
+  #page2 .toggle-wrap {right:0; padding-right:0}
+}
+@media all and (max-width:480px) {
+  #page2 .toggle-wrap {right:-30px; padding-right:0}
 }
 /* contact */
 #page3 .contents > ul.sns > li {display:inline-block; padding:5px; margin:0 5px; max-width:35px; max-height:35px; border-radius:2px; background:rgb(185, 163, 255); transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55)}
